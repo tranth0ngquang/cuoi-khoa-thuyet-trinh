@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active {
+    background-color: #f3f4f6;
+    color: #1e293b;
+}
+nav a:hover,
+.scroll-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
