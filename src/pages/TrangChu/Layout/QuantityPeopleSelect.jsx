@@ -29,12 +29,12 @@ export default function QuantityPeopleSelect() {
     }
   };
 
-  useEffect(() => {
-    return () => {
-      dispatch(setSoLuongKhachHienTai(1));
-      dispatch(setSoLuongKhachToiDa(99));
-    };
-  }, [dispatch]);
+  // useEffect(() => {
+  //   return () => {
+  //     dispatch(setSoLuongKhachHienTai(1));
+  //     dispatch(setSoLuongKhachToiDa(99));
+  //   };
+  // }, [dispatch]);
   return (
     <Popover
       aria-labelledby="area-popover"
@@ -66,7 +66,7 @@ export default function QuantityPeopleSelect() {
       }
     >
       <Button>
-        Số lượng khách <BiCaretDown className="ml-2" />
+        Số lượng khách: {soLuongKhachHienTai} <BiCaretDown className="ml-2" />
       </Button>
     </Popover>
   );

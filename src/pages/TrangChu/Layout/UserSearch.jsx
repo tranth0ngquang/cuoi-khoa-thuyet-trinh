@@ -5,7 +5,7 @@ import QuantityPeopleSelect from "./QuantityPeopleSelect";
 import { Button } from "flowbite-react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+import {setSelectedLocation} from "../../../redux/Reducers/Home/homeSlice";
 export default function UserSearch() {
   const navigate = useNavigate();
   const { selectedLocation } = useSelector(
@@ -19,6 +19,7 @@ export default function UserSearch() {
       <QuantityPeopleSelect />
       <Button
         onClick={() => {
+          
           if (selectedLocation === null) {
             navigate(`/Danh-Sach-Phong-Full`);
           } else {

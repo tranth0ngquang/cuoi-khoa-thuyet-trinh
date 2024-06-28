@@ -1,6 +1,26 @@
 import { http } from "../../../api/config";
-import { setDatPhongList, updateDatPhongInList, removeDatPhongFromList } from "./QuanLyDatPhongSlice";
+import {
+  setDatPhongList,
+  updateDatPhongInList,
+  removeDatPhongFromList,
+  setUserDetail,
+} from "./QuanLyDatPhongSlice";
 import Swal from "sweetalert2";
+
+export const fetchUserDetail = (id) => async (dispatch) => {
+  try {
+    const response = await http.get(`users/${id}`);
+    console.log("User detail: ", response.data.content);
+    dispatch(setUserDetail(response.data.content));
+  } catch (error) {
+    console.log("Failed to fetch user detail: ", error);
+    Swal.fire({
+      icon: "error",
+      title: "Thất bại",
+      text: "Lỗi! Người dùng không tồn tại!",
+    });
+  }
+};
 
 export const fetchDatPhongData = () => async (dispatch) => {
   try {

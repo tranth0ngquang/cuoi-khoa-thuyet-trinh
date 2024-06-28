@@ -1,6 +1,11 @@
 import Swal from "sweetalert2";
 import { http } from "../../../api/config";
-import { setDangKyThanhCong, setDangNhapThanhCong } from "./dangKySlice";
+import {
+  setDangKyThanhCong,
+  setDangNhapThanhCong,
+  setUserID,
+  setUserInfo,
+} from "./dangKySlice";
 
 export const PostDangKy = (dataForm) => async (dispatch) => {
   try {
@@ -25,6 +30,10 @@ export const PostDangNhap = (dataForm) => async (dispatch) => {
   try {
     const response = await http.post(`auth/signin`, dataForm);
     const dataFromAPI = response.data.content;
+    dispatch(setUserID(dataFromAPI.user.id));
+    dispatch(setUserInfo(dataFromAPI.user));
+    console.log(dataFromAPI.user.id);
+    console.log(response);
     dispatch(setDangNhapThanhCong(dataFromAPI));
     return response;
   } catch (error) {

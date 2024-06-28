@@ -9,6 +9,8 @@ import viTriSlice from "../Reducers/QuanTri/ViTriSlice";
 import quanLyPhongSlice from "../Reducers/QuanTri/QuanLyPhongSlice";
 import quanLyDatPhongSlice from "../Reducers/QuanTri/QuanLyDatPhongSlice";
 import loginStatusSlice from "../Reducers/LoginStatus/LoginStatusSlice";
+import dangKySlice from "../Reducers/DangKy/dangKySlice";
+import quanLyBinhLuanSlice from "../Reducers/QuanTri/QuanLyBinhLuanSlice";
 
 const rootReducer = combineReducers({
   homeSlice,
@@ -20,6 +22,8 @@ const rootReducer = combineReducers({
   quanLyPhongSlice,
   quanLyDatPhongSlice,
   loginStatusSlice,
+  dangKySlice,
+  quanLyBinhLuanSlice
 });
 
 export default rootReducer;

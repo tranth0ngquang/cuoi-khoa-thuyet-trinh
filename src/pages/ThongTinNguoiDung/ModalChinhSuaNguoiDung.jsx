@@ -1,14 +1,9 @@
 "use client";
 
-import {
-  Button,
-  Modal,
-  TextInput,
-  Label,
-  Select,
-  Datepicker,
-} from "flowbite-react";
+import { Button, Modal, TextInput, Label, Select } from "flowbite-react";
 import { useState, useEffect } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -23,7 +18,7 @@ export function ModalChinhSuaNguoiDung() {
     email: "",
     phone: "",
     gender: true,
-    birthday: "",
+    birthday: new Date(),
     id: "",
   });
   const [errors, setErrors] = useState({});
@@ -81,9 +76,7 @@ export function ModalChinhSuaNguoiDung() {
 
     if (Object.keys(newErrors).length === 0) {
       try {
-        await dispatch(
-          PutCapNhatUser({ userID: user.id, infoCapNhat: user })
-        );
+        await dispatch(PutCapNhatUser({ userID: user.id, infoCapNhat: user }));
         MySwal.fire({
           title: "Thành công!",
           text: "Cập nhật người dùng thành công.",
@@ -165,11 +158,11 @@ export function ModalChinhSuaNguoiDung() {
             </div>
             <div>
               <Label htmlFor="birthday" value="Ngày sinh" />
-              <Datepicker
+              <DatePicker
                 id="birthday"
                 selected={user.birthday}
                 onChange={handleDateChange}
-                dateformat="dd/MM/yyyy"
+                dateFormat="dd/MM/yyyy"
                 className="w-full border border-gray-300 rounded-md p-2"
               />
             </div>

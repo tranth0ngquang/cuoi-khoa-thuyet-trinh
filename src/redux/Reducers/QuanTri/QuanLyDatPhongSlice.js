@@ -6,6 +6,7 @@ const quanLyDatPhongSlice = createSlice({
     datPhongList: [],
     totalPages: 1,
     currentPage: 1,
+    userDetail: {},
   },
   reducers: {
     setDatPhongList: (state, action) => {
@@ -16,16 +17,29 @@ const quanLyDatPhongSlice = createSlice({
       state.currentPage = action.payload;
     },
     updateDatPhongInList: (state, action) => {
-      const index = state.datPhongList.findIndex((datPhong) => datPhong.id === action.payload.id);
+      const index = state.datPhongList.findIndex(
+        (datPhong) => datPhong.id === action.payload.id
+      );
       if (index !== -1) {
         state.datPhongList[index] = action.payload;
       }
     },
     removeDatPhongFromList: (state, action) => {
-      state.datPhongList = state.datPhongList.filter((datPhong) => datPhong.id !== action.payload);
+      state.datPhongList = state.datPhongList.filter(
+        (datPhong) => datPhong.id !== action.payload
+      );
+    },
+    setUserDetail: (state, action) => {
+      state.userDetail = action.payload;
     },
   },
 });
 
-export const { setDatPhongList, setCurrentPage, updateDatPhongInList, removeDatPhongFromList } = quanLyDatPhongSlice.actions;
+export const {
+  setUserDetail,
+  setDatPhongList,
+  setCurrentPage,
+  updateDatPhongInList,
+  removeDatPhongFromList,
+} = quanLyDatPhongSlice.actions;
 export default quanLyDatPhongSlice.reducer;

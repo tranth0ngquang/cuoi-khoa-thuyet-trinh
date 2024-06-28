@@ -1,4 +1,3 @@
-
 import { http } from "../../../api/config";
 import {
   setUserList,
@@ -63,8 +62,13 @@ export const updateUser = (formData) => async (dispatch) => {
 
 export const searchUser = (query) => async (dispatch) => {
   try {
-    const response = await http.get(`users/search/${query}`);
-    return response.data.content;
+    // const response = await http.get(`users/search/${query}`);
+    //
+    const response = await http.get(
+      `/users/phan-trang-tim-kiem?pageIndex=1&pageSize=10&keyword=${query}`
+    );
+
+    return response.data.content.data;
   } catch (error) {
     console.log("Failed to search user: ", error);
     throw error;

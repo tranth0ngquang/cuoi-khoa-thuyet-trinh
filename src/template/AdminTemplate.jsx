@@ -50,6 +50,17 @@ const AdminLayout = () => {
                   Quản lý thông tin đặt phòng
                 </NavLink>
               </Sidebar.Item>
+
+              <Sidebar.Item as="div">
+                <NavLink
+                  to="quan-ly-binh-luan"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-600" : "text-gray-700"
+                  }
+                >
+                  Quản lý bình luận
+                </NavLink>
+              </Sidebar.Item>
             </Sidebar.ItemGroup>
           </Sidebar.Items>
         </Sidebar>

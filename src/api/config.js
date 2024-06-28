@@ -1,5 +1,5 @@
 import axios from "axios";
-const user = JSON.parse(localStorage.getItem("user"));
+const user = JSON.parse(localStorage.getItem("user")) || {};
 const token = localStorage.getItem("token");
 export const http = axios.create({
   baseURL: "https://airbnbnew.cybersoft.edu.vn/api/",

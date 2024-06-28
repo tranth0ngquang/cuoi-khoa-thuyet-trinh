@@ -15,11 +15,9 @@ const MySwal = withReactContent(Swal);
 
 export default function ThongTinNguoiDung() {
   const dispatch = useDispatch();
-  const user = localStorage.getItem("user");
-  const userId = JSON.parse(user).id;
-  const userName = JSON.parse(user).name;
+  const user = JSON.parse(localStorage.getItem("user"));
+  const userId = user.id;
   const { userInfo } = useSelector((state) => state.userInfoSlice);
-  const { mangPhongDaDat } = useSelector((state) => state.userInfoSlice);
   const [selectedFile, setSelectedFile] = useState(null);
 
   useEffect(() => {
@@ -31,6 +29,7 @@ export default function ThongTinNguoiDung() {
     setSelectedFile(e.target.files[0]);
   };
 
+  console.log(localStorage.getItem("token"));
   const handleUploadAvatar = async () => {
     if (!selectedFile) {
       MySwal.fire({
@@ -40,33 +39,18 @@ export default function ThongTinNguoiDung() {
       });
       return;
     }
-
     const formData = new FormData();
     formData.append("formFile", selectedFile);
-
-    try {
-      await dispatch(uploadAvatar({ formData }));
-      MySwal.fire({
-        title: "Thành công!",
-        text: "Cập nhật avatar thành công.",
-        icon: "success",
-      });
-      dispatch(fetchUserInfo(userId)); // Refresh user info
-    } catch (error) {
-      MySwal.fire({
-        title: "Lỗi!",
-        text: "Đã xảy ra lỗi khi cập nhật avatar.",
-        icon: "error",
-      });
-    }
+    console.log(formData.get("formFile"));
+    dispatch(uploadAvatar(formData));
   };
 
   return (
     <div>
-      <h1>Xin chào, tôi là {userName}</h1>
+      <h1>Xin chào, tôi là {userInfo.name}</h1>
       <ModalChinhSuaNguoiDung />
       <div className="flex flex-wrap gap-2">
-        <Avatar img={userInfo ? userInfo.avatar : ""} size="lg" />
+        <Avatar img={userInfo.avatar} size="lg" />
         <input type="file" onChange={handleFileChange} />
         <Button onClick={handleUploadAvatar}>Cập nhật avatar</Button>
         <DanhSachPhongDaDat />
