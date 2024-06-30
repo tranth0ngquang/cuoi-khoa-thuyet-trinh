@@ -2,12 +2,176 @@
 @tailwind components;
 @tailwind utilities;
 
-.active {
-    background-color: #f3f4f6;
-    color: #1e293b;
-}
 nav a:hover,
 .scroll-link:hover {
     color: #0056b3;
     text-decoration: underline;
+}
+
+
+
+
+/* --------------------------- */
+
+.logoZaha path {
+    fill: rgb(6 182 212);
+    transition: all 0.5s;
+}
+
+.logoZaha:hover path {
+    fill: black;
+}
+
+.footer_logoZaha .logoZaha:hover path {
+    fill: white;
+}
+
+
+
+
+/* --------------------------- */
+
+/* header nav footer------------------------------ */
+.nav_text_ul a {
+    transition: all 0.5s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    padding: 5px 0;
+}
+
+.nav_text_ul a:hover {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    border-bottom: 1px solid black;
+    padding: 5px 5px;
+}
+
+.nav_text_ul .active {
+    color: rgb(6 182 212);
+    font-weight: 700;
+    border-bottom: 1px solid rgb(6 182 212);
+    padding: 5px 5px;
+}
+
+
+.NavFooter_text_a {
+    @apply text-cyan-600 hover:text-cyan-300 duration-500;
+}
+
+nav .nav_ava{
+    @apply divide-gray-100 rounded-lg shadow-xl duration-500 border border-stone-200 bg-white text-black dark:border-none dark:bg-white dark:text-black
+}
+
+
+.DangKy{
+    display: block;
+}
+.nav_block{
+    display: block;
+}
+@media screen and (max-width: 1023px) {
+    .DangKy{
+        display: none;
+    }
+    .nav_block{
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav_block{
+        display: block;
+    }
+}
+
+
+
+/* --------------------------- */
+
+/* video------------------------------ */
+.videoHome_play-pause,
+.videoHome_volume {
+    @apply text-white w-8 h-8 rounded-full bg-transparent hover:bg-black/80 border border-white/50 hover:border-white;
+}
+
+/* VIDEO + Sóng Wave------------- */
+
+.video_banner {
+    position: relative;
+}
+
+.video_wave1,
+.video_wave2,
+.video_wave3 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+}
+.video_wave2{
+    transform: scaleX(-1);
+}
+
+.video_wave1 .shape path {
+    fill: rgba(255, 255, 255, 0.5);
+}
+
+.video_wave2 .shape path {
+    fill: rgba(255, 255, 255, 0.7);
+}
+
+.video_wave3 .shape path {
+    fill: rgba(255, 255, 255, 1);
+}
+
+.Card_video {
+    position: absolute;
+    width: 60%;
+    margin: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+}
+
+@media screen and (max-width: 1200px) {
+    .Card_video {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        margin: 20px 0;
+    }
+
+    .video_wave1,
+    .video_wave2,
+    .video_wave3 {
+        display: none;
+    }
+}
+
+
+
+/* TimKiemKhoa------------------------------ */
+.TimKiemKhoa {
+    @apply text-center text-stone-700 hover:text-cyan-500 border-b-2 border-transparent hover:border-cyan-300 duration-700 pb-2 mx-6 hover:mx-10;
+}
+
+.Datepicker .relative{
+    width: 260px;
+}
+.Datepicker .relative input{
+    @apply bg-transparent dark:bg-transparent text-black dark:text-black border-none dark:border-none rounded-none placeholder-gray-400 focus:ring-0 disabled:opacity-40 disabled:cursor-not-allowed font-bold
+}
+.Datepicker .relative button{
+    @apply text-black font-bold
+}
+
+.TimKiem{
+    @apply py-2 rounded-none bg-transparent hover:bg-transparent hover:text-transparent hover:text-black md:bg-stone-200 md:hover:bg-cyan-500 md:hover:text-white duration-500
+}
+
+@media screen and (max-width: 768px) {
+    .Datepicker .relative{
+        width: auto;
+    }
 }

@@ -23,42 +23,44 @@ export default function LocationSelect() {
     return (
       locationList &&
       locationList.map((location) => (
-        <div
+        <button
           onClick={() => {
             setSelectedLocationName(location.tinhThanh);
             dispatch(setSelectedLocation(location.id));
           }}
           key={location.id}
-          className="text-center"
+          className="text-center text-stone-600 hover:text-cyan-500"
         >
-          <img
-            src={location.hinhAnh}
-            alt={location.tenViTri}
-            className="w-full h-auto mb-2 rounded-md"
-          />
-          <span className="text-gray-600">{location.tinhThanh}</span>
-        </div>
+          <div className='bg-center bg-cover rounded-lg h-16 md:h-28' style={{ backgroundImage: `url(${location.hinhAnh})` }}>
+          </div>
+          <span className="text-sm">{location.tinhThanh}</span>
+        </button>
       ))
     );
   };
   return (
-    <Popover
+    <Popover className="shadow-lg border rounded-3xl bg-white shadow-black/50 z-20"
       aria-labelledby="area-popover"
       open={open}
       onOpenChange={setOpen}
       content={
-        <div className="w-96 p-4 bg-white rounded-lg shadow-lg">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">
+        <div className="w-80 md:w-96 p-4">
+          <h2 className="font-bold text-cyan-950 mb-4 text-center">
             Tìm kiếm theo khu vực
           </h2>
-          <div className="grid grid-cols-4 gap-4">{renderLocationItem()}</div>
+          <div className="grid grid-cols-3 gap-4">{renderLocationItem()}</div>
         </div>
       }
     >
-      <Button>
-        Địa điểm : {selectedLocationName || "Chọn khu vực"}
-        <BiCaretDown className="ml-2" />
-      </Button>
+      <button className="text-left px-2 md:px-8 md:rounded-l-full TimKiem">
+        <div>
+          <p className="font-bold">Địa điểm:</p>
+          <div className="text-sm text-stone-700">
+            <span> {selectedLocationName || "Chọn khu vực"}</span>
+            <i class="fa-solid fa-caret-down pl-2"></i>
+          </div>
+        </div>
+      </button>
     </Popover>
   );
 }

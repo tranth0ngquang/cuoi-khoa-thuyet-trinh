@@ -58,16 +58,23 @@ export default function ChiTietPhong() {
 
   console.log(chiTietPhong);
   return (
-    <div>
-      <h1>{chiTietPhong && chiTietPhong.tenPhong}</h1>
+    <div className="mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
+      <h3 className="pb-8 text-white font-bold text-2xl uppercase">tách nền</h3>
+      <h1 className="pb-8 text-cyan-500 font-bold text-2xl uppercase">{chiTietPhong && chiTietPhong.tenPhong}</h1>
       <img
+        className="rounded-3xl"
         src={chiTietPhong && chiTietPhong.hinhAnh}
         alt="anh chi tiet cua phong"
       />
-      <CardDatPhong />
-      <TienNghiComponent />
 
-      <CommentComponent />
+      <div className="grid grid-cols-3 gap-5 my-8">
+        <div className="col-span-2">
+          <TienNghiComponent />
+          <CommentComponent />
+        </div>
+
+        <CardDatPhong />
+      </div>
     </div>
   );
 }

@@ -34,28 +34,29 @@ export default function CardLocaltion() {
     return (
       locationListCard &&
       locationListCard.map((location) => (
-        <Card
-          key={location.id}
-          className="max-w-sm"
-          imgSrc={location.hinhAnh}
-          horizontal
-          onClick={() => navigate(`Danh-Sach-Phong/${location.id}`)}
-        >
-          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {location.tinhThanh}
-          </h5>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            {Math.floor(Math.random() * 9) + 1} giờ chạy xe
-          </p>
-        </Card>
+        <div onClick={() => navigate(`Danh-Sach-Phong/${location.id}`)} key={location.id}
+        className="rounded-3xl bg-white hover:bg-cyan-50 border border-transparent hover:border-cyan-200 shadow-md hover:shadow-xl duration-500">
+          <div className='bg-center bg-cover rounded-3xl h-48 md:h-72' style={{ backgroundImage: `url(${location.hinhAnh})`}}>
+          </div>
+
+          <div className='p-4 text-cyan-700 hover:text-cyan-500 duration-500'>
+            <p className='font-bold text-xl'>{location.tinhThanh}</p>
+            <p className='text-black'>{Math.floor(Math.random() * 9) + 1} giờ chạy xe</p>
+          </div>
+        </div>
+
       ))
     );
   };
 
   return (
-    <div className="listCardLocation__content">
-      <div className="grid grid-cols-4 gap-4">{renderLocationCardItem()}</div>
-      <div className="flex justify-between mt-4">
+    <div className="listCardLocation__content mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
+      <h3 className="pb-8 text-cyan-950 font-bold text-2xl uppercase">Các địa điểm được ưu chuộng</h3>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+        {renderLocationCardItem()}
+      </div>
+
+      {/* <div className="flex justify-between mt-4">
         <Button disabled={currentPage === 1} onClick={handlePrevious}>
           Previous
         </Button>
@@ -65,7 +66,7 @@ export default function CardLocaltion() {
         <Button disabled={currentPage === totalPages} onClick={handleNext}>
           Next
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 }

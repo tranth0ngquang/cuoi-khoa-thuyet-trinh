@@ -36,38 +36,42 @@ export default function QuantityPeopleSelect() {
   //   };
   // }, [dispatch]);
   return (
-    <Popover
+    <Popover className="shadow-lg border rounded-3xl bg-white shadow-black/50 z-20"
       aria-labelledby="area-popover"
       open={open}
       onOpenChange={setOpen}
       content={
-        <div className="w-64 p-4 bg-white rounded-lg shadow-lg">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">
+        <div className="w-52 p-4">
+          <h2 className="font-bold text-cyan-950 mb-4 text-center">
             Số lượng khách
           </h2>
-          <div className="flex items-center justify-between">
-            <Button
+          <div className="flex items-center justify-center text-black">
+            <button className="text-black bg-white border border-stone-500 hover:text-white hover:bg-cyan-500 duration-500 rounded-full w-7 h-7"
               color="light"
               onClick={handleDecreasePeople}
               disabled={soLuongKhachHienTai <= 1}
             >
-              <HiMinus className="text-red-500" />
-            </Button>
-            <span className="text-xl">{soLuongKhachHienTai}</span>
-            <Button
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <span className="text-lg px-6">{soLuongKhachHienTai}</span>
+            <button className="text-black bg-white border border-stone-500 hover:text-white hover:bg-cyan-500 duration-500 rounded-full w-7 h-7"
               color="light"
               onClick={handleIncrease}
               disabled={soLuongKhachHienTai >= soLuongKhachToiDa}
             >
-              <HiPlus className="text-red-500" />
-            </Button>
+              <i class="fa-solid fa-plus"></i>
+            </button>
           </div>
         </div>
       }
     >
-      <Button>
-        Số lượng khách: {soLuongKhachHienTai} <BiCaretDown className="ml-2" />
-      </Button>
+      <button className="text-left px-2 md:px-8">
+        <p className="font-bold">Số lượng khách:</p>
+        <div className="text-sm text-stone-700">
+          <span> {soLuongKhachHienTai} khách / phòng</span>
+          <i class="fa-solid fa-caret-down pl-2"></i>
+        </div>
+      </button>
     </Popover>
   );
 }

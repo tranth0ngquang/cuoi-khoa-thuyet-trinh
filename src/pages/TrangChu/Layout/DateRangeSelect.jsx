@@ -172,14 +172,17 @@ const DateRangeSelect = () => {
   };
 
   return (
-    <div>
+    <div className="Datepicker flex items-center TimKiem md:border-none border-y-2 border-cyan-500/50">
       <Datepicker
         i18n={"vi"}
         displayFormat={"DD/MM/YYYY"}
         value={value}
         onChange={handleValueChange}
       />
-      <p>Số ngày giữa hai ngày: {soLuongNgayO ? soLuongNgayO : 0}</p>
+      <button className="w-full px-4">
+        <p className="font-bold">Bạn đặt:</p>
+        <p className="text-sm text-stone-700">{soLuongNgayO ? soLuongNgayO : 0} ngày</p>
+      </button>
     </div>
   );
 };
