@@ -94,7 +94,7 @@ export default function CardDesign() {
                             <div className='absolute top-4 px-4 z-10 flex justify-between w-full'>
                                 <p className='bg-white rounded-3xl px-4 py-2 mr-2 hover:text-cyan-500 hover:px-6 duration-700 text-sm'>{item.Evaluate}</p>
                                 <div>
-                                    <i class="fa-solid fa-heart bg-white/70 rounded-3xl p-2 text-cyan-500 border border-white hover:bg-cyan-500 hover:text-white duration-700"></i>
+                                    <i className="fa-solid fa-heart bg-white/70 rounded-3xl p-2 text-cyan-500 border border-white hover:bg-cyan-500 hover:text-white duration-700"></i>
                                 </div>
                             </div>
                             <Swiper
@@ -119,7 +119,7 @@ export default function CardDesign() {
                         <div className='p-4 text-cyan-700 hover:text-cyan-500 duration-500'>
                             <div className='flex justify-between'>
                                 <p className='font-bold'>{item.name}</p>
-                                <p><i class="fa-solid fa-star pr-1 "></i>{item.Star}</p>
+                                <p><i className="fa-solid fa-star pr-1 "></i>{item.Star}</p>
                             </div>
                             <div className='text-black'>
                                 <p>{item.Room}</p>

@@ -8,9 +8,6 @@ nav a:hover,
     text-decoration: underline;
 }
 
-
-
-
 /* --------------------------- */
 
 .logoZaha path {
@@ -25,9 +22,6 @@ nav a:hover,
 .footer_logoZaha .logoZaha:hover path {
     fill: white;
 }
-
-
-
 
 /* --------------------------- */
 
@@ -53,37 +47,33 @@ nav a:hover,
     padding: 5px 5px;
 }
 
-
 .NavFooter_text_a {
     @apply text-cyan-600 hover:text-cyan-300 duration-500;
 }
 
-nav .nav_ava{
-    @apply divide-gray-100 rounded-lg shadow-xl duration-500 border border-stone-200 bg-white text-black dark:border-none dark:bg-white dark:text-black
+nav .nav_ava {
+    @apply divide-gray-100 rounded-lg shadow-xl duration-500 border border-stone-200 bg-white text-black dark:border-none dark:bg-white dark:text-black;
 }
 
-
-.DangKy{
+.DangKy {
     display: block;
 }
-.nav_block{
+.nav_block {
     display: block;
 }
 @media screen and (max-width: 1023px) {
-    .DangKy{
+    .DangKy {
         display: none;
     }
-    .nav_block{
+    .nav_block {
         display: none;
     }
 }
 @media screen and (max-width: 768px) {
-    .nav_block{
+    .nav_block {
         display: block;
     }
 }
-
-
 
 /* --------------------------- */
 
@@ -108,7 +98,7 @@ nav .nav_ava{
     bottom: 0;
     z-index: 1;
 }
-.video_wave2{
+.video_wave2 {
     transform: scaleX(-1);
 }
 
@@ -149,29 +139,43 @@ nav .nav_ava{
     }
 }
 
-
-
 /* TimKiemKhoa------------------------------ */
 .TimKiemKhoa {
     @apply text-center text-stone-700 hover:text-cyan-500 border-b-2 border-transparent hover:border-cyan-300 duration-700 pb-2 mx-6 hover:mx-10;
 }
 
-.Datepicker .relative{
+.Datepicker .relative {
     width: 260px;
 }
-.Datepicker .relative input{
-    @apply bg-transparent dark:bg-transparent text-black dark:text-black border-none dark:border-none rounded-none placeholder-gray-400 focus:ring-0 disabled:opacity-40 disabled:cursor-not-allowed font-bold
+.Datepicker .relative input::placeholder {
+    color: black !important;
 }
-.Datepicker .relative button{
-    @apply text-black font-bold
+.Datepicker div div:nth-of-type(1) div:nth-of-type(2) {
+    background-color: red;
+}
+.Datepicker .relative input {
+    @apply bg-transparent dark:bg-transparent text-black dark:text-black border-none dark:border-none rounded-none placeholder-gray-400 focus:ring-0 disabled:opacity-40 disabled:cursor-not-allowed font-bold;
+}
+.Datepicker .relative button {
+    @apply text-black font-bold;
 }
 
-.TimKiem{
-    @apply py-2 rounded-none bg-transparent hover:bg-transparent hover:text-transparent hover:text-black md:bg-stone-200 md:hover:bg-cyan-500 md:hover:text-white duration-500
+.TimKiem {
+    @apply py-2 rounded-none bg-transparent hover:bg-transparent hover:text-transparent hover:text-black md:bg-stone-200 md:hover:bg-cyan-500 md:hover:text-white duration-500;
 }
 
 @media screen and (max-width: 768px) {
-    .Datepicker .relative{
+    .Datepicker .relative {
         width: auto;
     }
+}
+
+/* -------------- BURGER CSS */
+.custom-burger-icon {
+    @apply text-cyan-600 hover:text-cyan-300 duration-500;
+}
+/* Màu của placehoder cuốn lịch */
+/* CSS cho placeholder trong Datepicker */
+.CUSTOM_CSS {
+    color: black;
 }

@@ -57,7 +57,7 @@ export default function LocationSelect() {
           <p className="font-bold">Địa điểm:</p>
           <div className="text-sm text-stone-700">
             <span> {selectedLocationName || "Chọn khu vực"}</span>
-            <i class="fa-solid fa-caret-down pl-2"></i>
+            <i className="fa-solid fa-caret-down pl-2"></i>
           </div>
         </div>
       </button>

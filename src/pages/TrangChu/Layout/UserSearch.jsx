@@ -29,7 +29,7 @@ export default function UserSearch() {
               }
             }}
           >
-            <i class="fa-solid fa-magnifying-glass text-white bg-cyan-700 hover:bg-cyan-950 rounded-full p-3 duration-500"></i>
+            <i className="fa-solid fa-magnifying-glass text-white bg-cyan-700 hover:bg-cyan-950 rounded-full p-3 duration-500"></i>
           </button>
         </div>
       </div>
