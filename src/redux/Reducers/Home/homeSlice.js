@@ -130,7 +130,7 @@ const homeSlice = createSlice({
     },
     setLocationListCard: (state, action) => {
       state.locationListCard = action.payload.data;
-      state.totalPages = Math.ceil(action.payload.totalRow / 8);
+      state.totalPages = Math.ceil(action.payload.totalRow / 10);
     },
     setCurrentPage: (state, action) => {
       state.currentPage = action.payload;

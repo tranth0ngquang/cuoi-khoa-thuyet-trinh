@@ -56,7 +56,7 @@ export default function CardLocaltion() {
         {renderLocationCardItem()}
       </div>
 
-      {/* <div className="flex justify-between mt-4">
+      <div className="flex justify-between mt-4">
         <Button disabled={currentPage === 1} onClick={handlePrevious}>
           Previous
         </Button>
@@ -66,7 +66,7 @@ export default function CardLocaltion() {
         <Button disabled={currentPage === totalPages} onClick={handleNext}>
           Next
         </Button>
-      </div> */}
+      </div>
     </div>
   );
 }

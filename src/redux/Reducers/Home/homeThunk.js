@@ -13,7 +13,7 @@ export const fetchLocationList = () => async (dispatch) => {
 export const fetchLocationListCard = (page) => async (dispatch) => {
   try {
     const response = await http.get(
-      `vi-tri/phan-trang-tim-kiem?pageIndex=${page}&pageSize=8`
+      `vi-tri/phan-trang-tim-kiem?pageIndex=${page}&pageSize=10`
     );
     dispatch(setLocationListCard(response.data.content));
   } catch (error) {
