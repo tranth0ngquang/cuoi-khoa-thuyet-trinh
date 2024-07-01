@@ -151,7 +151,9 @@ nav .nav_ava {
     color: black !important;
 }
 .Datepicker div div:nth-of-type(1) div:nth-of-type(2) {
-    background-color: red;
+    background-color: white;
+    border-radius: 30px;
+    border: none;
 }
 .Datepicker .relative input {
     @apply bg-transparent dark:bg-transparent text-black dark:text-black border-none dark:border-none rounded-none placeholder-gray-400 focus:ring-0 disabled:opacity-40 disabled:cursor-not-allowed font-bold;
@@ -172,10 +174,14 @@ nav .nav_ava {
 
 /* -------------- BURGER CSS */
 .custom-burger-icon {
-    @apply text-cyan-600 hover:text-cyan-300 duration-500;
+    @apply text-cyan-600 hover:text-cyan-300 bg-white dark:bg-white duration-500;
 }
 /* Màu của placehoder cuốn lịch */
 /* CSS cho placeholder trong Datepicker */
 .CUSTOM_CSS {
     color: black;
+}
+
+.BanTay{
+    cursor: pointer;
 }

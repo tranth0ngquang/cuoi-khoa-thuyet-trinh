@@ -36,15 +36,15 @@ export default function CardDesignVideo() {
                         className="mySwiper rounded-3xl"
                     >
                         <SwiperSlide>
-                            <div className='bg-center bg-cover w-full h-96 sm:h-64' style={{ backgroundImage: 'url(./img/video_img1.png)' }}>
+                            <div className='bg-center bg-cover w-full h-80 sm:h-64' style={{ backgroundImage: 'url(./img/video_img1.png)' }}>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className='bg-center bg-cover w-full h-96 sm:h-64' style={{ backgroundImage: 'url(./img/video_img2.png)' }}>
+                            <div className='bg-center bg-cover w-full h-80 sm:h-64' style={{ backgroundImage: 'url(./img/video_img2.png)' }}>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className='bg-center bg-cover w-full h-96 sm:h-64' style={{ backgroundImage: 'url(./img/video_img3.png)' }}>
+                            <div className='bg-center bg-cover w-full h-80 sm:h-64' style={{ backgroundImage: 'url(./img/video_img3.png)' }}>
                             </div>
                         </SwiperSlide>
 

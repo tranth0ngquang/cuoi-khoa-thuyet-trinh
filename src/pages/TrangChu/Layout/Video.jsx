@@ -4,7 +4,7 @@ import CardDesignVideo from './CardDesignVideo'
 
 export default function Video() {
     return (
-        <div className='video_banner'>
+        <div className='video_banner pt-16 md:pt-0'>
             <VideoHeader />
             <div className="Card_video">
                 <div className="rounded-3xl shadow-lg">

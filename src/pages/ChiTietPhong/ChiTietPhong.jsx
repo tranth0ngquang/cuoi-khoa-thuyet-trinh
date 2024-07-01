@@ -9,6 +9,7 @@ import CardDatPhong from "./Layout/CardDatPhong";
 import CommentComponent from "./Layout/CommentComponent";
 import { setSoLuongKhachToiDa } from "../../redux/Reducers/ChiTietPhong/chiTietPhongSlice";
 import TienNghiComponent from "./Layout/TienNghiComponent";
+import ChiTietPhu from "./Layout/ChiTietPhu";
 
 export default function ChiTietPhong() {
   const { idSelectedRoomParams } = useParams();
@@ -27,23 +28,35 @@ export default function ChiTietPhong() {
 
   console.log(chiTietPhong);
   return (
-    <div className="mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
-      <h3 className="pb-8 text-white font-bold text-2xl uppercase">tách nền</h3>
-      <h1 className="pb-8 text-cyan-500 font-bold text-2xl uppercase">{chiTietPhong && chiTietPhong.tenPhong}</h1>
-      <img
-        className="rounded-3xl"
-        src={chiTietPhong && chiTietPhong.hinhAnh}
-        alt="anh chi tiet cua phong"
-      />
+    <div>
+      <img src="/img/BannerNav4.png" alt="" className="w-full pt-16 md:pt-0" />
+      <div className="mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
+        <h1 className="pb-4 text-cyan-700 font-bold text-xl md:text-3xl uppercase text-center">{chiTietPhong && chiTietPhong.tenPhong}</h1>
+        <div className="flex justify-center pb-6">
+          <div className="BanTay text-stone-500 hover:text-cyan-500 duration-500 pr-2">
+          <i class="fa-solid fa-arrow-up-from-bracket px-2"></i>
+            <span>Chia Sẻ</span>
+          </div>
+          <div className="BanTay text-stone-500 hover:text-cyan-500 duration-500 pl-2">
+            <i class="fa-solid fa-heart px-2"></i>
+            <span>Yêu thích</span>
+          </div>
 
-      <div className="grid grid-cols-3 gap-5 my-8">
-        <div className="col-span-2">
-          <TienNghiComponent />
-          <CommentComponent />
+        </div>
+        <img className="rounded-3xl" src={chiTietPhong && chiTietPhong.hinhAnh} alt="anh chi tiet cua phong"/>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-8 p-4">
+          <div className="col-span-1 lg:col-span-2">
+            <TienNghiComponent />
+            <CommentComponent />
+          </div>
+
+          <CardDatPhong />
         </div>
 
-        <CardDatPhong />
+        <ChiTietPhu/>
       </div>
+
     </div>
   );
 }

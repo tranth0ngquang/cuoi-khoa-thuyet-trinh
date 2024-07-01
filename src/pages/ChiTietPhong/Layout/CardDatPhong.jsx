@@ -83,32 +83,74 @@ export default function CardDatPhong() {
   };
 
   return (
-    <Card className="max-w-sm">
-      <p>{chiTietPhong && chiTietPhong.giaTien}$ / đêm</p>
-      <p>Đánh giá </p>
-      <DateRangeSelect />
-      <QuantityPeopleSelect />
-      <p>Số lượng khách tối đa: {soLuongKhachToiDa}</p>
+    <div className="w-full">
+      <div className="w-full rounded-3xl shadow-xl">
+        <div className="flex justify-between items-center p-4">
+          <p>Giá: <span className="font-bold text-3xl text-cyan-500">{chiTietPhong && chiTietPhong.giaTien}</span> VNĐ / đêm</p>
+          <p><i className="fa-solid fa-star pr-1 text-cyan-500"></i>4.9</p>
+        </div>
 
-      <Button onClick={handleThanhToan}>Thanh toán</Button>
-      <p>bạn vẫn chưa bị trừ tiền</p>
+        <div className="text-center">
+          <DateRangeSelect />
+          <QuantityPeopleSelect />
+          <p className="text-sm italic text-cyan-500">Số lượng khách tối đa: {soLuongKhachToiDa}</p>
+        </div>
 
-      <p>
-        {chiTietPhong && chiTietPhong.giaTien.toLocaleString()} $ x{" "}
-        {soLuongNgayO ? soLuongNgayO : 0} ={" "}
-        {chiTietPhong && soLuongNgayO
-          ? soLuongNgayO
-          : 0 && (chiTietPhong.giaTien * soLuongNgayO).toLocaleString()}{" "}
-        VNĐ
-      </p>
-      <p>Phí dịch vụ 10$</p>
-      <p>
-        Tổng cộng{" "}
-        {chiTietPhong &&
-          soLuongNgayO &&
-          (chiTietPhong.giaTien * soLuongNgayO + 10).toLocaleString()}{" "}
-        VNĐ
-      </p>
-    </Card>
+        <div className="text-center py-2">
+          <button className="bg-cyan-500 hover:bg-cyan-700 duration-500 text-white font-bold text-xl rounded-3xl py-2 px-16" onClick={handleThanhToan}>Thanh toán</button>
+          <p className="text-sm italic text-cyan-500 pt-2 pb-2">Bạn vẫn chưa bị trừ tiền</p>
+        </div>
+
+        <hr />
+        <div className="flex justify-between items-center p-4">
+          <div className="">
+            <p>
+              {chiTietPhong && chiTietPhong.giaTien.toLocaleString()} VNĐ x{" "} {soLuongNgayO ? soLuongNgayO : 0} đêm
+            </p>
+            <p>Phí dịch vụ</p>
+          </div>
+          <div className="text-right">
+            <p>
+              {chiTietPhong && soLuongNgayO ? soLuongNgayO : 0 && (chiTietPhong.giaTien * soLuongNgayO).toLocaleString()}{" "}VNĐ
+            </p>
+            <p>10 VNĐ</p>
+          </div>
+
+        </div>
+
+        <hr />
+        <div className="flex justify-between items-center p-4 text-xl font-bold">
+          <div className="">
+            <p>Tổng cộng</p>
+          </div>
+          <div className="text-right">
+            <p>
+            {chiTietPhong && soLuongNgayO && (chiTietPhong.giaTien * soLuongNgayO + 10).toLocaleString()}{" "}VNĐ
+            </p>
+          </div>
+
+        </div>
+
+
+        {/* <p>
+            {chiTietPhong && chiTietPhong.giaTien.toLocaleString()}VNĐ x{" "}
+            {soLuongNgayO ? soLuongNgayO : 0} ={" "}
+            {chiTietPhong && soLuongNgayO
+              ? soLuongNgayO
+              : 0 && (chiTietPhong.giaTien * soLuongNgayO).toLocaleString()}{" "}
+            VNĐ
+          </p>
+          <p>Phí dịch vụ 10VNĐ</p>
+          <p>
+            Tổng cộng{" "}
+            {chiTietPhong &&
+              soLuongNgayO &&
+              (chiTietPhong.giaTien * soLuongNgayO + 10).toLocaleString()}{" "}
+            VNĐ
+          </p> */}
+
+      </div>
+
+    </div>
   );
 }
