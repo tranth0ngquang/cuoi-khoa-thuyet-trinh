@@ -34,7 +34,7 @@ export default function ChiTietPhong() {
         <h1 className="pb-4 text-cyan-700 font-bold text-xl md:text-3xl uppercase text-center">{chiTietPhong && chiTietPhong.tenPhong}</h1>
         <div className="flex justify-center pb-6">
           <div className="BanTay text-stone-500 hover:text-cyan-500 duration-500 pr-2">
-          <i class="fa-solid fa-arrow-up-from-bracket px-2"></i>
+            <i class="fa-solid fa-arrow-up-from-bracket px-2"></i>
             <span>Chia Sẻ</span>
           </div>
           <div className="BanTay text-stone-500 hover:text-cyan-500 duration-500 pl-2">
@@ -43,18 +43,21 @@ export default function ChiTietPhong() {
           </div>
 
         </div>
-        <img className="rounded-3xl" src={chiTietPhong && chiTietPhong.hinhAnh} alt="anh chi tiet cua phong"/>
+        <img className="w-full rounded-3xl" src={chiTietPhong && chiTietPhong.hinhAnh} alt="anh chi tiet cua phong" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-8 p-4">
-          <div className="col-span-1 lg:col-span-2">
+        <div className="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-3 gap-5 my-8 p-4">
+          <div className="col-span-1 lg:col-span-3 xl:col-span-2">
             <TienNghiComponent />
             <CommentComponent />
           </div>
 
-          <CardDatPhong />
+          <div className="col-span-1 lg:col-span-2 xl:col-span-1">
+            <CardDatPhong />
+          </div>
+
         </div>
 
-        <ChiTietPhu/>
+        <ChiTietPhu />
       </div>
 
     </div>

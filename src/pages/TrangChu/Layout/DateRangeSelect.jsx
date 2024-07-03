@@ -56,7 +56,7 @@ const DateRangeSelect = () => {
   };
 
   return (
-    <div className="Datepicker flex items-center TimKiem md:border-none border-y-2 border-cyan-500/50">
+    <div className="Datepicker flex items-center TimKiem md:border-none border-y-2 border-cyan-500/50 BanTay">
       <Datepicker
         i18n={"vi"}
         displayFormat={"DD/MM/YYYY"}

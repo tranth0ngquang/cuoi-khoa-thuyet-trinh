@@ -6,6 +6,7 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}", // Bao gồm tất cả các tệp cần thiết
     flowbite.content(),
     "./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",
+    "./node_modules/flowbite/**/*.js",
   ],
   presets: [],
   darkMode: "media", // or 'class'
@@ -1085,5 +1086,8 @@ module.exports = {
       50: "50",
     },
   },
-  plugins: [flowbite.plugin()],
+  plugins: [
+    flowbite.plugin(),
+    require('flowbite/plugin')
+  ],
 };

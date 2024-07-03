@@ -8,7 +8,7 @@ export default function ChiTietPhu() {
 
                 <div className='grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8'>
                     <div className=''>
-                        <div className='bg-white rounded-3xl shadow-lg text-center p-8 grid grid-cols-1 lg:grid-cols-3 gap-8'>
+                        <div className='bg-white rounded-3xl shadow-lg text-center p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 border'>
                             <div className='col-span-2'>
                                 <div className='flex justify-center pb-3'>
                                     <div className='relative'>
@@ -17,7 +17,7 @@ export default function ChiTietPhu() {
                                         </div>
 
                                         <div className='absolute bottom-0 right-0'>
-                                            <i class="fa-solid fa-check text-white text-lg rounded-full bg-cyan-500 px-2 py-0"></i>
+                                            <i class="fa-solid fa-check text-white text-2xl rounded-full bg-cyan-500 px-2.5 py-1"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -26,13 +26,13 @@ export default function ChiTietPhu() {
                                 <p><i class="fa-solid fa-medal text-cyan-500"></i>Chủ nhà loại 1</p>
                             </div>
                             <div className='text-left text-sm'>
-                                <p className='font-semibold text-2xl'>4321</p>
+                                <p className='font-semibold text-2xl text-cyan-500'>4321</p>
                                 <p className='py-2'>Lượt đánh giá</p>
                                 <hr />
-                                <p className='font-semibold text-2xl pt-2'>4.9</p>
+                                <p className='font-semibold text-2xl text-cyan-500 pt-2'>4.9</p>
                                 <p className='py-2'>TB lượt đánh giá</p>
                                 <hr />
-                                <p className='font-semibold text-2xl pt-2'>10</p>
+                                <p className='font-semibold text-2xl text-cyan-500 pt-2'>10</p>
                                 <p className='py-2'>Năm kinh nghiệm</p>
                             </div>
                         </div>
@@ -49,11 +49,11 @@ export default function ChiTietPhu() {
                         </div>
                     </div>
                     <div className='col-span-2'>
-                        <p className='font-semibold text-xl pb-4'>Mathieu Lehanneur là một Chủ nhà loại 1</p>
+                        <p className='font-semibold text-xl pb-4 text-cyan-500'>Mathieu Lehanneur là một Chủ nhà loại 1</p>
                         <p className='text-justify'>
-                            Xin chào, tôi là Mika. Và tôi thích đi du lịch nhiều như bạn.
+                            Xin chào, tôi là Mathieu. Và tôi thích đi du lịch nhiều như bạn.
                             <br /><br />
-                            Phải mất nhiều năm kinh nghiệm bán hàng trực tiếp và nhiều hoạt động của công ty khiến tôi nhận ra việc đi du lịch là một niềm đam mê. Việc tôi đắm chìm trong các nền văn hóa khác nhau đã định hình giấc mơ có hoạt động kinh doanh liên quan đến du lịch của riêng tôi. Là một du khách khao khát, tôi biết việc tìm một ngôi nhà tạm thời ở một nơi xa lạ có thể gây căng thẳng như thế nào. Tôi tin vào một dịch vụ bắt nguồn từ sự đồng cảm vì vậy tôi luôn đặt mình vào vị trí của du khách. Nhìn thấy phần còn lại của thế giới là giấc mơ suốt đời của tôi, nhưng Thành phố Cebu sẽ luôn là nhà của tôi.
+                            Phải mất nhiều năm kinh nghiệm bán hàng trực tiếp và nhiều hoạt động của công ty khiến tôi nhận ra việc đi du lịch là một niềm đam mê. Việc tôi đắm chìm trong các nền văn hóa khác nhau đã định hình giấc mơ có hoạt động kinh doanh liên quan đến du lịch của riêng tôi. Là một du khách khao khát, tôi biết việc tìm một ngôi nhà tạm thời ở một nơi xa lạ có thể gây căng thẳng như thế nào. Tôi tin vào một dịch vụ bắt nguồn từ sự đồng cảm vì vậy tôi luôn đặt mình vào vị trí của du khách. Nhìn thấy phần còn lại của thế giới là giấc mơ suốt đời của tôi, nhưng Thành phố Paris, Pháp sẽ luôn là nhà của tôi.
                             <br /><br />
                             Nếu bạn dự định sớm đến thăm, tôi sẽ rất vui được đón tiếp bạn và cho bạn thấy cuộc sống như một người địa phương như thế nào.
                         </p>
@@ -62,7 +62,9 @@ export default function ChiTietPhu() {
                         <p>Tỉ lệ phản hồi: 100%</p>
                         <p className='pb-4'>Phản hồi trong vòng 1 giờ</p>
 
-                        <button className='bg-cyan-500 hover:bg-cyan-700 text-white py-2 px-8 rounded-full duration-500 mb-4'>Nhắn tin ngay cho chủ nhà</button>
+                        <button className='bg-cyan-500 hover:bg-cyan-700 text-white py-2 px-8 rounded-full duration-500 mb-4'>
+                            Nhắn tin ngay cho chủ nhà <i class="fa-solid fa-paper-plane pl-2"></i>
+                        </button>
 
                         {/* <hr className='pb-2' /> */}
                         <p className='text-sm text-cyan-500 italic'>Để bảo vệ khoản thanh toán của bạn, tuyệt đối không chuyển tiền hoặc liên lạc bên ngoài trang web hoặc ứng dụng Zaha Việt Nam.</p>

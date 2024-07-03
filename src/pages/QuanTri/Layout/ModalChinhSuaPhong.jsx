@@ -54,9 +54,11 @@ const ModalChinhSuaPhong = ({ phong }) => {
 
   return (
     <>
-      <Button color="yellow" onClick={() => setOpenModal(true)}>
+
+      <button className="bg-cyan-500 text-white hover:bg-cyan-800 rounded-lg p-2 mr-2" onClick={() => setOpenModal(true)}>
         <i className="fa fa-pencil-alt"></i>
-      </Button>
+      </button>
+      
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
         <Modal.Header>Chỉnh Sửa Phòng</Modal.Header>
         <Modal.Body>

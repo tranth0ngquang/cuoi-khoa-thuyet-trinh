@@ -40,7 +40,7 @@ const ModalThemViTri = () => {
 
   return (
     <>
-      <Button color="blue" onClick={() => setOpenModal(true)}>
+      <Button color="cyan" onClick={() => setOpenModal(true)}>
         Thêm vị trí
       </Button>
       <Modal show={openModal} onClose={() => setOpenModal(false)}>

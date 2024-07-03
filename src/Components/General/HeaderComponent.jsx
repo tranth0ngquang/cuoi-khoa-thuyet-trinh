@@ -48,7 +48,8 @@ export function HeaderComponent() {
   return (
     <Navbar
       fluid
-      className="w-full bg-white/90 dark:bg-white/90 text-stone-500 px-4 sm:px-10 py-2.5 rounded-none rounded-b-3xl fixed z-50 shadow-lg"
+      className="w-full text-stone-500 px-4 sm:px-10 py-2.5 rounded-none rounded-b-3xl fixed z-50 shadow-lg bg-center bg-cover"
+      style={{ backgroundImage: "url(/img/header1.png)" }}
     >
       <Link to="">
         <LogoZahaSvg />
@@ -60,39 +61,42 @@ export function HeaderComponent() {
             arrowIcon={false}
             inline
             label={
-              <Avatar
+              <Avatar className="ring-2 ring-cyan-500 rounded-full"
                 alt="User settings"
                 img={userInfo && userInfo.avatar}
                 rounded
               />
             }
           >
-            <Dropdown.Header>
-              <span className="block text-sm text-black">{userInfo?.name}</span>
-              <span className="block truncate text-sm font-medium text-black">
+            <div className="nav_ava_Header p-4">
+              <span className="block text-black font-bold">{userInfo?.name}</span>
+              <span className="block truncate text-sm text-cyan-500">
                 {userInfo?.email}
               </span>
-            </Dropdown.Header>
-            <Dropdown.Item className="dark:text-black dark:focus:text-white hover:bg-cyan-500 dark:hover:bg-cyan-500">
-              <Link
-                to="/Thong-Tin-Nguoi-Dung"
-                className="hover:text-white dark:focus:text-white"
-              >
+            </div>
+
+            <hr />
+
+            <a href="/Thong-Tin-Nguoi-Dung" className="hover:no-underline">
+              <div className="text-black hover:text-white hover:bg-cyan-500 text-sm BanTay px-4 py-2 duration-500">
                 Thông tin cá nhân
-              </Link>
-            </Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item
-              onClick={handleLogout}
-              className="dark:text-black dark:focus:text-white hover:bg-cyan-500 dark:hover:bg-cyan-500"
+              </div>
+            </a>
+
+            <hr />
+
+            <div onClick={handleLogout}
+              className="text-black hover:text-white hover:bg-cyan-500 text-sm BanTay px-4 py-2 duration-500"
             >
-              Sign out
-            </Dropdown.Item>
+              Đăng xuất
+            </div>
           </Dropdown>
         ) : (
+
+          // khi chưa đăng nhập - đăng ký
           <div className="flex space-x-2">
             <Button
-              className="bg-transparent dark:bg-transparent text-cyan-500 hover:text-white border-cyan-500 rounded-full focus:ring-1"
+              className="bg-cyan-900/80 dark:bg-cyan-900/80 text-white border-cyan-500 rounded-full focus:ring-1"
               onClick={() => setOpenDangNhap(true)}
             >
               Đăng nhập

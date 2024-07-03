@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+a{
+    text-decoration: none !important;
+}
+
 nav a:hover,
 .scroll-link:hover {
     color: #0056b3;
@@ -16,35 +20,36 @@ nav a:hover,
 }
 
 .logoZaha:hover path {
-    fill: black;
-}
-
-.footer_logoZaha .logoZaha:hover path {
     fill: white;
 }
+
+/* .footer_logoZaha .logoZaha:hover path {
+    fill: white;
+} */
 
 /* --------------------------- */
 
 /* header nav footer------------------------------ */
 .nav_text_ul a {
     transition: all 0.5s;
+    color: rgb(6 182 212);
     border-bottom: 1px solid rgba(255, 255, 255, 0);
     padding: 5px 0;
 }
 
 .nav_text_ul a:hover {
     text-decoration: none;
-    color: black;
+    color: rgb(103 232 249);
     font-weight: 700;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(103 232 249);
     padding: 5px 5px;
 }
 
 .nav_text_ul .active {
-    color: rgb(6 182 212);
+    color: white;
     font-weight: 700;
-    border-bottom: 1px solid rgb(6 182 212);
-    padding: 5px 5px;
+    border-bottom: 1px solid white;
+    padding: 5px 0;
 }
 
 .NavFooter_text_a {
@@ -74,6 +79,7 @@ nav .nav_ava {
         display: block;
     }
 }
+
 
 /* --------------------------- */
 
@@ -172,6 +178,17 @@ nav .nav_ava {
     }
 }
 
+
+
+/* Icon Chi tiết phòng - tiện nghi ------------------------------ */
+.icon_TienNghi svg{
+    fill: black;
+    transition: all 0.5s;
+}
+.icon_TienNghi:hover svg{
+    fill: rgb(6 182 212);
+}
+
 /* -------------- BURGER CSS */
 .custom-burger-icon {
     @apply text-cyan-600 hover:text-cyan-300 bg-white dark:bg-white duration-500;
@@ -184,4 +201,12 @@ nav .nav_ava {
 
 .BanTay{
     cursor: pointer;
+}
+
+
+
+
+
+.nav_admin_sideBar > div {
+    background-color: white;
 }

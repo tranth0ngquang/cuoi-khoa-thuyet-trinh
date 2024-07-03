@@ -7,60 +7,63 @@ const AdminLayout = () => {
     <>
       <HeaderComponentAdmin />
       <div className="flex h-screen">
-        <Sidebar className="w-64">
+        <Sidebar className="w-72 nav_admin_sideBar">
           <Sidebar.Items>
             <Sidebar.ItemGroup>
-              <Sidebar.Item as="div">
+              <div className="py-2">
                 <NavLink
                   to="quan-ly-nguoi-dung"
                   className={({ isActive }) =>
-                    isActive ? "text-blue-600" : "text-gray-700"
+                    isActive ? "w-full px-4 py-2 text-cyan-500 hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
                   }
                 >
                   Quản lý người dùng
                 </NavLink>
-              </Sidebar.Item>
-              <Sidebar.Item as="div">
+              </div>
+
+              <div className="py-2">
                 <NavLink
                   to="quan-ly-vi-tri"
                   className={({ isActive }) =>
-                    isActive ? "text-blue-600" : "text-gray-700"
+                    isActive ? "w-full px-4 py-2 text-cyan-500 hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
                   }
                 >
                   Quản lý vị trí
                 </NavLink>
-              </Sidebar.Item>
-              <Sidebar.Item as="div">
+              </div>
+
+              <div className="py-2">
                 <NavLink
                   to="quan-ly-thong-tin-phong"
                   className={({ isActive }) =>
-                    isActive ? "text-blue-600" : "text-gray-700"
+                    isActive ? "w-full px-4 py-2 text-cyan-500 hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
                   }
                 >
                   Quản lý thông tin phòng
                 </NavLink>
-              </Sidebar.Item>
-              <Sidebar.Item as="div">
+              </div>
+
+              <div className="py-2">
                 <NavLink
                   to="quan-ly-thong-tin-dat-phong"
                   className={({ isActive }) =>
-                    isActive ? "text-blue-600" : "text-gray-700"
+                    isActive ? "w-full px-4 py-2 text-cyan-500 hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
                   }
                 >
                   Quản lý thông tin đặt phòng
                 </NavLink>
-              </Sidebar.Item>
+              </div>
 
-              <Sidebar.Item as="div">
+              <div className="py-2">
                 <NavLink
                   to="quan-ly-binh-luan"
                   className={({ isActive }) =>
-                    isActive ? "text-blue-600" : "text-gray-700"
+                    isActive ? "w-full px-4 py-2 text-cyan-500 hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
                   }
                 >
                   Quản lý bình luận
                 </NavLink>
-              </Sidebar.Item>
+              </div>
             </Sidebar.ItemGroup>
           </Sidebar.Items>
         </Sidebar>

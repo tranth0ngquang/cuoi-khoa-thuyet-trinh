@@ -336,8 +336,10 @@ const QuanLyThongTinDatPhong = () => {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-4">Quản lý thông tin đặt phòng</h1>
+
       <div className="flex justify-between mb-4">
         <TextInput
+          color="cyan"
           id="search"
           placeholder="Tìm kiếm đặt phòng"
           value={keyword}
@@ -345,7 +347,59 @@ const QuanLyThongTinDatPhong = () => {
         />
       </div>
 
-      <Table>
+      {/* Bang Thông tin nguoi dung */}
+      <div className="mb-8 border bg-white shadow-lg w-full">
+        <table className=" w-full">
+          <tr className="border bg-stone-200 text-left">
+            <th className="py-2 pl-2">ID</th>
+            <th>Mã Phòng</th>
+            <th>Ngày Đến</th>
+            <th>Ngày Đi</th>
+            <th>Số Lượng Khách</th>
+            <th>Mã Người Dùng</th>
+            <th>Chi Tiết Mã</th>
+            <th>Thao Tác</th>
+          </tr>
+
+          {paginatedData.map((datPhong) => (
+            <tr key={datPhong.id} className=" border">
+              <td className="py-4 pl-2">{datPhong.id}</td>
+              <td>{datPhong.maPhong}</td>
+              <td>{formatDate(datPhong.ngayDen)}</td>
+              <td>{formatDate(datPhong.ngayDi)}</td>
+              <td>{datPhong.soLuongKhach}</td>
+              <td>{datPhong.maNguoiDung}</td>
+
+              <td key={`ChiTiet-${datPhong.id}`}>
+                <button
+                  className="bg-cyan-700 text-white hover:bg-cyan-950 rounded-lg p-2"
+                  onClick={() => handleUserDetails(datPhong.maNguoiDung)}
+                >
+                  Chi Tiết
+                </button>
+              </td>
+
+              <td key={`actions-${datPhong.id}`}>
+                <button
+                  className="bg-cyan-500 text-white hover:bg-cyan-800 rounded-lg p-2 mr-2"
+                  onClick={() => handleEditClick(datPhong)}
+                >
+                  <i className="fa fa-pencil-alt"></i>
+                </button>
+                <button
+                  className="bg-red-500 text-white hover:bg-red-700 rounded-lg p-2"
+                  onClick={() => handleDelete(datPhong.id)}
+                >
+                  <i className="fa fa-trash-alt"></i>
+                </button>
+              </td>
+
+            </tr>
+          ))}
+
+        </table>
+      </div>
+      {/* <Table>
         <Table.Head>
           <Table.HeadCell>ID</Table.HeadCell>
           <Table.HeadCell>Mã Phòng</Table.HeadCell>
@@ -387,12 +441,15 @@ const QuanLyThongTinDatPhong = () => {
             </Table.Row>
           ))}
         </Table.Body>
-      </Table>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+      </Table> */}
+
+      <div className="text-center">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      </div>
 
       {selectedDatPhong && (
         <Modal show={true} onClose={() => setSelectedDatPhong(null)}>

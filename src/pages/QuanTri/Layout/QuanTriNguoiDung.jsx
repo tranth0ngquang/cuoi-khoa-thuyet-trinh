@@ -143,24 +143,74 @@ const QuanTriNguoiDung = () => {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-4">Quản lý người dùng</h1>
-      <div className="flex justify-end mb-4">
-        <Button color="blue" onClick={() => setOpenModal(true)}>
-          Thêm người dùng
-        </Button>
-      </div>
 
-      <div className="flex justify-end mb-4">
+      <div className="flex justify-between mb-4">
         <TextInput
+          color="cyan"
           id="search"
           name="search"
           placeholder="Tìm kiếm người dùng"
           value={searchTerm}
           onChange={handleSearchChange}
         />
+        <Button color="cyan" onClick={() => setOpenModal(true)}>
+          Thêm người dùng
+        </Button>
       </div>
 
-      <Table>
-        <Table.Head>
+      {/* Bang Thông tin nguoi dung */}
+      <div className="mb-8 border bg-white shadow-lg w-full">
+        <table className=" w-full">
+          <tr className="border bg-stone-200 text-left">
+            <th className="py-2 pl-2">ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Phone</th>
+            <th>Birthday</th>
+            <th>Avatar</th>
+            <th>Gender</th>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+
+          {userList.map((user) => (
+            <tr key={user.id} className=" border">
+              <td className="py-4 pl-2">{user.id}</td>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>{user.password}</td>
+              <td>{user.phone}</td>
+              <td>{user.birthday}</td>
+              <td key={`avatar-${user.id}`}>
+                <img
+                  src={user.avatar}
+                  alt={user.name}
+                  className="w-10 h-10 rounded-full"
+                />
+              </td>
+              <td>{user.gender ? "Male" : "Female"}</td>
+              <td>{user.role}</td>
+              <td key={`actions-${user.id}`}>
+                <button
+                  className="bg-cyan-500 text-white hover:bg-cyan-800 rounded-lg p-2 mr-2"
+                  onClick={() => handleEditUser(user)}
+                >
+                  <i className="fa fa-pencil-alt"></i>
+                </button>
+                <button
+                  className="bg-red-500 text-white hover:bg-red-700 rounded-lg p-2"
+                  onClick={() => handleDeleteUser(user.id)}
+                >
+                  <i className="fa fa-trash-alt"></i>
+                </button>
+              </td>
+
+            </tr>
+          ))}
+
+        </table>
+        {/* <Table.Head>
           <Table.HeadCell>ID</Table.HeadCell>
           <Table.HeadCell>Name</Table.HeadCell>
           <Table.HeadCell>Email</Table.HeadCell>
@@ -171,8 +221,8 @@ const QuanTriNguoiDung = () => {
           <Table.HeadCell>Gender</Table.HeadCell>
           <Table.HeadCell>Role</Table.HeadCell>
           <Table.HeadCell>Action</Table.HeadCell>
-        </Table.Head>
-        <Table.Body>
+        </Table.Head> */}
+        {/* <Table.Body>
           {userList.map((user) => (
             <Table.Row key={user.id}>
               <Table.Cell>{user.id}</Table.Cell>
@@ -191,28 +241,32 @@ const QuanTriNguoiDung = () => {
               <Table.Cell>{user.gender ? "Male" : "Female"}</Table.Cell>
               <Table.Cell>{user.role}</Table.Cell>
               <Table.Cell key={`actions-${user.id}`}>
-                <Button
-                  className="bg-yellow-400"
+                <button
+                  className="bg-cyan-500 text-white hover:bg-cyan-950 rounded-lg p-2"
                   onClick={() => handleEditUser(user)}
                 >
                   <i className="fa fa-pencil-alt"></i>
-                </Button>
-                <Button
-                  className="bg-red-600"
+                </button>
+                <button
+                  className="bg-cyan-700 text-white hover:bg-cyan-950 rounded-lg p-2"
                   onClick={() => handleDeleteUser(user.id)}
                 >
                   <i className="fa fa-trash-alt"></i>
-                </Button>
+                </button>
               </Table.Cell>
             </Table.Row>
           ))}
-        </Table.Body>
-      </Table>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+        </Table.Body> */}
+      </div>
+
+      <div className="text-center">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      </div>
+
 
       {/* Modal Them nguoi dung */}
       <Modal show={openModal} onClose={() => setOpenModal(false)}>

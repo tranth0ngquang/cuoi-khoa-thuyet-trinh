@@ -47,7 +47,7 @@ const ModalThemPhong = () => {
 
   return (
     <>
-      <Button color="blue" onClick={() => setOpenModal(true)}>
+      <Button color="cyan" onClick={() => setOpenModal(true)}>
         Thêm Phòng
       </Button>
       <Modal show={openModal} onClose={() => setOpenModal(false)}>

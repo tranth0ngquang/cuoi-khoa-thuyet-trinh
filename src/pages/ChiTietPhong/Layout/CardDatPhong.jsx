@@ -84,7 +84,7 @@ export default function CardDatPhong() {
 
   return (
     <div className="w-full">
-      <div className="w-full rounded-3xl shadow-xl">
+      <div className="w-full rounded-3xl shadow-xl border">
         <div className="flex justify-between items-center p-4">
           <p>Giá: <span className="font-bold text-3xl text-cyan-500">{chiTietPhong && chiTietPhong.giaTien}</span> VNĐ / đêm</p>
           <p><i className="fa-solid fa-star pr-1 text-cyan-500"></i>4.9</p>
@@ -97,7 +97,7 @@ export default function CardDatPhong() {
         </div>
 
         <div className="text-center py-2">
-          <button className="bg-cyan-500 hover:bg-cyan-700 duration-500 text-white font-bold text-xl rounded-3xl py-2 px-16" onClick={handleThanhToan}>Thanh toán</button>
+          <button className="bg-cyan-700 hover:bg-cyan-500 duration-500 text-white font-bold text-xl rounded-3xl py-2 px-16" onClick={handleThanhToan}>Thanh toán</button>
           <p className="text-sm italic text-cyan-500 pt-2 pb-2">Bạn vẫn chưa bị trừ tiền</p>
         </div>
 
@@ -111,7 +111,7 @@ export default function CardDatPhong() {
           </div>
           <div className="text-right">
             <p>
-              {chiTietPhong && soLuongNgayO ? soLuongNgayO : 0 && (chiTietPhong.giaTien * soLuongNgayO).toLocaleString()}{" "}VNĐ
+              {chiTietPhong && soLuongNgayO && (chiTietPhong.giaTien * soLuongNgayO).toLocaleString()}{" "}VNĐ
             </p>
             <p>10 VNĐ</p>
           </div>
@@ -119,7 +119,7 @@ export default function CardDatPhong() {
         </div>
 
         <hr />
-        <div className="flex justify-between items-center p-4 text-xl font-bold">
+        <div className="flex justify-between items-center p-4 text-xl font-bold bg-cyan-500 text-white rounded-b-3xl">
           <div className="">
             <p>Tổng cộng</p>
           </div>

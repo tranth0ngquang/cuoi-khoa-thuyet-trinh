@@ -18,7 +18,7 @@ export default function ModalChiTietNguoiDatPhong({ userId, show, onClose }) {
   return (
     <Modal show={show} onClose={onClose}>
       <Modal.Header>Thông Tin Người Đặt Phòng</Modal.Header>
-      <Modal.Body>
+      <Modal.Body className="text-black dark:text-stone-300">
         {userDetail ? (
           <div className="space-y-4">
             <p>

@@ -18,9 +18,9 @@ const ModalDeleteViTri = ({ viTriId }) => {
 
   return (
     <>
-      <Button color="red" onClick={() => setOpenModal(true)}>
-        <i className="fa fa-trash"></i>
-      </Button>
+      <button className="bg-red-500 text-white hover:bg-red-700 rounded-lg p-2" onClick={() => setOpenModal(true)}>
+      <i className="fa fa-trash-alt"></i>
+      </button>
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
         <Modal.Header>Xóa vị trí</Modal.Header>
         <Modal.Body>

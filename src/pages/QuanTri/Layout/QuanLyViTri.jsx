@@ -48,8 +48,10 @@ const QuanTriViTri = () => {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-4">Quản lý vị trí</h1>
+
       <div className="flex justify-between mb-4">
         <TextInput
+          color="cyan"
           id="search"
           name="search"
           placeholder="Tìm kiếm vị trí"
@@ -58,7 +60,46 @@ const QuanTriViTri = () => {
         />
         <ModalThemViTri />
       </div>
-      <Table>
+
+      {/* Bang Thông tin vị trí */}
+      <div className="mb-8 border bg-white shadow-lg w-full">
+        <table className=" w-full">
+          <tr className="border bg-stone-200 text-left">
+            <th className="py-2 pl-2">ID</th>
+            <th>Tên Vị Trí</th>
+            <th>Tỉnh Thành</th>
+            <th>Quốc Gia</th>
+            <th>Hình Ảnh</th>
+            <th>Thao Tác</th>
+          </tr>
+
+          {viTriList.map((viTri) => (
+            <tr key={viTri.id} className=" border">
+              <td className="py-4 pl-2">{viTri.id}</td>
+              <td>{viTri.tenViTri}</td>
+              <td>{viTri.tinhThanh}</td>
+              <td>{viTri.quocGia}</td>
+
+              <td key={`avatar-${viTri.id}`}>
+                <img
+                  src={viTri.hinhAnh}
+                  alt={viTri.tenViTri}
+                  className="w-10 h-10 rounded-full"
+                />
+              </td>
+
+              <td key={`actions-${viTri.id}`}>
+                <ModalChinhSuaViTri viTri={viTri} />
+                <ModalDeleteViTri viTriId={viTri.id} />
+              </td>
+
+            </tr>
+          ))}
+
+        </table>
+
+      </div>
+      {/* <Table>
         <Table.Head>
           <Table.HeadCell>ID</Table.HeadCell>
           <Table.HeadCell>Tên Vị Trí</Table.HeadCell>
@@ -89,12 +130,15 @@ const QuanTriViTri = () => {
             </Table.Row>
           ))}
         </Table.Body>
-      </Table>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+      </Table> */}
+
+      <div className="text-center">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      </div>
     </div>
   );
 };

@@ -56,17 +56,72 @@ const QuanLyPhong = () => {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-4">Quản lý phòng</h1>
+
       <div className="flex justify-between mb-4">
-        <ModalThemPhong />
         <TextInput
+          color="cyan"
           id="search"
           placeholder="Tìm kiếm phòng"
           value={keyword}
           onChange={handleSearchChange}
         />
+        <ModalThemPhong />
       </div>
 
-      <Table>
+      {/* Bang Thông tin Phòng */}
+      <div className="mb-8 border bg-white shadow-lg w-full">
+        <table className=" w-full">
+          <tr className="border bg-stone-200 text-left">
+            <th className="py-2 pl-2">ID</th>
+            <th>Hình Ảnh</th>
+            <th>Tên Phòng</th>
+            <th>Mã Vị Trí</th>
+            <th>Chi Tiết</th>
+            <th>Thao Tác</th>
+          </tr>
+
+          {phongList.map((phong) => (
+            <tr key={phong.id} className=" border">
+              <td className="py-4 pl-2">{phong.id}</td>
+
+              <td key={`avatar-${phong.id}`}>
+                <img
+                  src={phong.hinhAnh}
+                  alt={phong.tenPhong}
+                  className="w-10 h-10 rounded-full"
+                />
+              </td>
+
+              <td>{phong.tenPhong}</td>
+              <td>{phong.maViTri}</td>
+
+              <td key={`ChiTiet-${phong.id}`}>
+                <button
+                  className="bg-cyan-700 text-white hover:bg-cyan-950 rounded-lg p-2"
+                  onClick={() => handleShowDetails(phong)}
+                >
+                  Chi Tiết
+                </button>
+              </td>
+
+              <td key={`actions-${phong.id}`}>
+                <ModalChinhSuaPhong phong={phong} />
+
+                <button
+                  className="bg-red-500 text-white hover:bg-red-700 rounded-lg p-2"
+                  onClick={() => handleDelete(phong.id)}
+                >
+                  <i className="fa fa-trash-alt"></i>
+                </button>
+              </td>
+
+            </tr>
+          ))}
+
+        </table>
+      </div>
+
+      {/* <Table>
         <Table.Head>
           <Table.HeadCell>ID</Table.HeadCell>
           <Table.HeadCell>Hình Ảnh</Table.HeadCell>
@@ -93,6 +148,7 @@ const QuanLyPhong = () => {
                   Chi Tiết
                 </Button>
               </Table.Cell>
+
               <Table.Cell>
                 <ModalChinhSuaPhong phong={phong} />
                 <Button color="red" onClick={() => handleDelete(phong.id)}>
@@ -102,17 +158,20 @@ const QuanLyPhong = () => {
             </Table.Row>
           ))}
         </Table.Body>
-      </Table>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+      </Table> */}
+
+      <div className="text-center">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      </div>
 
       {selectedPhong && (
         <Modal show={true} onClose={handleCloseModal}>
           <Modal.Header>Chi Tiết Phòng</Modal.Header>
-          <Modal.Body>
+          <Modal.Body className="text-black dark:text-stone-300">
             <p>
               <strong>ID:</strong> {selectedPhong.id}
             </p>

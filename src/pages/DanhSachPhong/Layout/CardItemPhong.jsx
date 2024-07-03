@@ -142,15 +142,15 @@ export default function CardItemPhong() {
     }
 
     return filteredPhong.map((phong) => (
-      <div
-        className="rounded-3xl bg-white hover:bg-cyan-50 border border-transparent hover:border-cyan-200 shadow-md hover:shadow-xl duration-500"
-        key={phong.id}
-      // onClick={() => {
-      //   dispatch(setIdSelectedRoom(phong.id));
-      //   navigate(`Chi-Tiet-Phong/${phong.id}`);
-      // }}
-      >
-        <div href="" className="BanTay">
+      <div className="">
+        <div
+          className="BanTay rounded-3xl bg-white hover:bg-cyan-50 border border-transparent hover:border-cyan-200 shadow-md hover:shadow-xl duration-500"
+          key={phong.id}
+        // onClick={() => {
+        //   dispatch(setIdSelectedRoom(phong.id));
+        //   navigate(`Chi-Tiet-Phong/${phong.id}`);
+        // }}
+        >
           <div className="relative">
             <div className="absolute top-4 px-4 z-10 flex justify-between w-full">
               <p className="bg-white rounded-3xl px-4 py-2 mr-2 hover:text-cyan-500 hover:px-6 duration-700 text-sm">
@@ -206,8 +206,7 @@ export default function CardItemPhong() {
             </div>
             <div className="text-black">
               <p>
-                P. Ngủ: {phong.phongNgu} | Giường: {phong.giuong} | P. Tắm:{" "}
-                {phong.phongTam}
+                P. Ngủ: {phong.phongNgu} | Giường: {phong.giuong}
               </p>
               <p>
                 Tiện ích: {phong.hoBoi ? "Hồ bơi. " : ""}
@@ -219,6 +218,7 @@ export default function CardItemPhong() {
             </div>
           </div>
         </div>
+        <div className="h-8"></div>
       </div>
     ));
   };

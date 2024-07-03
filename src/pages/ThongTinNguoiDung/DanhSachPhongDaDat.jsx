@@ -30,37 +30,48 @@ const DanhSachPhongDaDat = () => {
   console.log(chiTietPhong);
 
   return (
-    <div className="container mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Danh Sách Phòng Đã Đặt</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="mx-auto w-full max-w-screen-2xl p-4 pb-6 lg:pb-8">
+      <h1 className="text-2xl font-bold text-center mb-8">Danh Sách Phòng Đã Đặt</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-8">
         {mangPhongDaDat.map((phong) => {
           const chiTiet = chiTietPhong[phong.maPhong];
           return (
-            <Card key={phong.id} className="p-4">
+            <div key={phong.id} className="">
               {chiTiet && (
                 <>
-                  <img src={chiTiet.hinhAnh} alt={chiTiet.tenPhong} />
-                  <h2 className="text-xl font-semibold mb-2">
-                    {chiTiet.tenPhong}
-                  </h2>
-                  <p>{chiTiet.dieuHoa === true ? "Điều hòa" : ""}</p>
-                  <p>{chiTiet.bep === true ? "bếp" : ""}</p>
-                  <p>{chiTiet.doXe === true ? "doXe" : ""}</p>
-                  <p>{chiTiet.giuong ? `giuong:${chiTiet.giuong} ` : ""}</p>
-                  <p>{chiTiet.hoBoi === true ? "hoBoi" : ""}</p>
-                  <p>
-                    {chiTiet.phongNgu ? `phongNgu:${chiTiet.phongNgu} ` : ""}
-                  </p>
-                  <p>
-                    {chiTiet.phongTam ? `phongTam:${chiTiet.phongTam} ` : ""}
-                  </p>
-                  <p>{chiTiet.tivi === true ? "tivi" : ""}</p>
-                  <p>{chiTiet.wifi === true ? "wifi" : ""}</p>
-                  <p>Số lượng khách: {chiTiet.khach}</p>
-                  <p>Giá tiền: {chiTiet.giaTien} $</p>
+                  <div className="BanTay h-full rounded-3xl bg-white hover:bg-cyan-50 border border-transparent hover:border-cyan-200 shadow-md hover:shadow-xl duration-500">
+                    <div className='bg-center bg-cover rounded-3xl h-36 md:h-48' style={{ backgroundImage: `url(${chiTiet.hinhAnh})` }}>
+                    </div>
+
+                    <div className='p-4 text-cyan-700 hover:text-cyan-500 duration-500'>
+                      <p className='font-bold text-xl'>{chiTiet.tenPhong}</p>
+                      <p className=" text-black">
+                        <span className="font-bold">P. Ngủ: </span>{chiTiet.phongNgu ? `${chiTiet.phongNgu} Phòng` : ""}
+                        <br />
+                        <span className="font-bold">Giường: </span>{chiTiet.giuong ? `${chiTiet.giuong} Giường` : ""}
+                        <br />
+                        <span className="font-bold">P. Tắm: </span>{chiTiet.phongTam ? `${chiTiet.phongTam} Phòng` : ""}
+                      </p>
+                      <p className=" text-black">
+                        <span className="font-bold">Tiện ích: </span>
+                        {chiTiet.dieuHoa === true ? "Điều hòa | " : ""}
+                        {chiTiet.bep === true ? "Bếp | " : ""}
+                        {chiTiet.doXe === true ? "Đỗ xe | " : ""}
+                        {chiTiet.hoBoi === true ? "Hồ Bơi | " : ""}
+                        {chiTiet.tivi === true ? "Tivi | " : ""}
+                        {chiTiet.wifi === true ? "Wifi" : ""}
+                      </p>
+                      <p className="font-bold">
+                        Số lượng khách: {chiTiet.khach}
+                        <br />
+                        Giá tiền: {chiTiet.giaTien} VNĐ
+                      </p>
+                    </div>
+                  </div>
+
                 </>
               )}
-            </Card>
+            </div>
           );
         })}
       </div>
