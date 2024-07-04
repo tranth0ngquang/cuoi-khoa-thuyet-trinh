@@ -17,13 +17,21 @@ import {
   setUserList,
   removeUserFromList,
 } from "../../../redux/Reducers/QuanTri/QuanTriSlice";
+import { useNavigate } from "react-router-dom";
 
 const QuanTriNguoiDung = () => {
   const dispatch = useDispatch();
   const { userList, totalPages, currentPage } = useSelector(
     (state) => state.quanTriSlice
   );
-
+  const navigate = useNavigate();
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem("user"));
+    console.log(userInfo);
+    if (!userInfo || userInfo.role !== "ADMIN") {
+      navigate("/");
+    }
+  }, [navigate]);
   useEffect(() => {
     dispatch(fetchUserData(currentPage));
   }, [dispatch, currentPage]);

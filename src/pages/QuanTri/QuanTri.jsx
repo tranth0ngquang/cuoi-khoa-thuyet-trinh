@@ -6,15 +6,15 @@ import QuanLyPhong from "./Layout/QuanLyPhong";
 import { useNavigate } from "react-router-dom";
 
 const QuanTri = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    const userInfo = JSON.parse(localStorage.getItem("user"));
-    console.log(userInfo);
-    if (!userInfo || userInfo.role !== "ADMIN") {
-      navigate("/");
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   const userInfo = JSON.parse(localStorage.getItem("user"));
+  //   console.log(userInfo);
+  //   if (!userInfo || userInfo.role !== "ADMIN") {
+  //     navigate("/");
+  //   }
+  // }, [navigate]);
 
 
   return (

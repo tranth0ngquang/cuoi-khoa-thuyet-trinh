@@ -281,6 +281,7 @@ import {
   deleteBinhLuan,
 } from "../../../redux/Reducers/QuanTri/QuanLyBinhLuanThunk";
 import { setCurrentPage } from "../../../redux/Reducers/QuanTri/QuanLyBinhLuanSlice";
+import { useNavigate } from "react-router-dom";
 
 const QuanLyBinhLuan = () => {
   const dispatch = useDispatch();
@@ -289,6 +290,14 @@ const QuanLyBinhLuan = () => {
   );
   const [keyword, setKeyword] = useState("");
 
+  const navigate = useNavigate();
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem("user"));
+    console.log(userInfo);
+    if (!userInfo || userInfo.role !== "ADMIN") {
+      navigate("/");
+    }
+  }, [navigate]);
   useEffect(() => {
     dispatch(fetchBinhLuanData());
   }, [dispatch]);

@@ -10,8 +10,18 @@ import {
   deletePhong,
 } from "../../../redux/Reducers/QuanTri/QuanLyPhongThunk";
 import { setCurrentPage } from "../../../redux/Reducers/QuanTri/QuanLyPhongSlice";
+import { useNavigate } from "react-router-dom";
 
 const QuanLyPhong = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem("user"));
+    console.log(userInfo);
+    if (!userInfo || userInfo.role !== "ADMIN") {
+      navigate("/");
+    }
+  }, [navigate]);
+  
   const dispatch = useDispatch();
   const { phongList, totalPages, currentPage } = useSelector(
     (state) => state.quanLyPhongSlice

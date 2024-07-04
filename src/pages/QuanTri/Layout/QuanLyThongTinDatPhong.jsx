@@ -563,9 +563,13 @@ import {
 } from "../../../redux/Reducers/QuanTri/QuanLyDatPhongThunk";
 import { setCurrentPage } from "../../../redux/Reducers/QuanTri/QuanLyDatPhongSlice";
 import ModalChiTietNguoiDatPhong from "./ModalChiTietNguoiDatPhong";
+import { useNavigate } from "react-router-dom";
 
 const QuanLyThongTinDatPhong = () => {
   const dispatch = useDispatch();
+
+
+
   const { datPhongList, totalPages, currentPage } = useSelector(
     (state) => state.quanLyDatPhongSlice
   );
@@ -582,6 +586,15 @@ const QuanLyThongTinDatPhong = () => {
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [showUserModal, setShowUserModal] = useState(false);
 
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem("user"));
+    console.log(userInfo);
+    if (!userInfo || userInfo.role !== "ADMIN") {
+      navigate("/");
+    }
+  }, [navigate]);
   useEffect(() => {
     if (keyword.trim() !== "") {
       dispatch(fetchDatPhongTheoNguoiDung(keyword));

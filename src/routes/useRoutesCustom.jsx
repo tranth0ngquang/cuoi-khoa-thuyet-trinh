@@ -15,6 +15,7 @@ import QuanTriNguoiDung from "../pages/QuanTri/Layout/QuanTriNguoiDung";
 import QuanLyPhong from "../pages/QuanTri/Layout/QuanLyPhong";
 import AdminLayout from "../template/AdminTemplate";
 import QuanTriBinhLuan from "../pages/QuanTri/Layout/QuanTriBinhLuan";
+import AdminGuard from "./AdminGuard";
 
 export default function useRoutesCustom() {
   const myRoutes = useRoutes([
@@ -58,11 +59,15 @@ export default function useRoutesCustom() {
     },
     {
       path: "Quan-Tri",
-      element: <AdminLayout />,
+      element: (
+        <AdminGuard>
+          <AdminLayout />
+        </AdminGuard>
+      ),
       children: [
         {
           index: true,
-          element: <QuanTri />,
+          element: <QuanTriNguoiDung />,
         },
         {
           path: "quan-ly-nguoi-dung",
@@ -89,3 +94,4 @@ export default function useRoutesCustom() {
   ]);
   return myRoutes;
 }
+

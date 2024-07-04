@@ -13,9 +13,20 @@ import {
 import ModalThemViTri from "./ModalThemViTri";
 import ModalChinhSuaViTri from "./ModalChinhSuaViTri";
 import ModalDeleteViTri from "./ModalDeleteViTri";
+import { useNavigate } from "react-router-dom";
 
 const QuanTriViTri = () => {
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem("user"));
+    console.log(userInfo);
+    if (!userInfo || userInfo.role !== "ADMIN") {
+      navigate("/");
+    }
+  }, [navigate]);
+
   const { viTriList, totalPages, currentPage } = useSelector(
     (state) => state.viTriSlice
   );
