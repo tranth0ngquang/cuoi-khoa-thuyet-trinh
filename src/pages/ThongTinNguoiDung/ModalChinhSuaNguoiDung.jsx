@@ -7,11 +7,11 @@
 //   Select,
 //   Radio,
 // } from "flowbite-react";
-import { Button, Modal, TextInput, Label, Select, Radio } from "flowbite-react";
+import { Label, Modal, Radio, Select } from "flowbite-react";
 // import { useFormik } from "formik";
 // import * as Yup from "yup";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch } from "react-redux";
@@ -134,7 +134,7 @@ export function ModalChinhSuaNguoiDung() {
                   <label htmlFor="name" value="name" className="peer-focus:font-medium absolute text-sm text-stone-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-cyan-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Họ và tên</label>
 
                   {errors.name && (
-                    <p className="text-cyan-300 text-sm pt-2">{errors.name}</p>
+                    <p className="text-red-500  text-sm pt-2">{errors.name}</p>
                   )}
                 </div>
 
@@ -146,7 +146,7 @@ export function ModalChinhSuaNguoiDung() {
                   <label htmlFor="email" value="Email" className="peer-focus:font-medium absolute text-sm text-stone-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-cyan-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
 
                   {errors.email && (
-                    <p className="text-cyan-300 text-sm pt-2">{errors.email}</p>
+                    <p className="text-red-500  text-sm pt-2">{errors.email}</p>
                   )}
                 </div>
 
@@ -158,7 +158,7 @@ export function ModalChinhSuaNguoiDung() {
                   <label htmlFor="phone" value="phone" className="peer-focus:font-medium absolute text-sm text-stone-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-cyan-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Số điện thoại</label>
 
                   {errors.phone && (
-                    <p className="text-cyan-300 text-sm pt-2">{errors.phone}</p>
+                    <p className="text-red-500  text-sm pt-2">{errors.phone}</p>
                   )}
                 </div>
                 <div></div>
@@ -182,13 +182,13 @@ export function ModalChinhSuaNguoiDung() {
                   )} */}
                 </div>
 
-                <div className="z-0 w-full mb-5 group">
+                {/* <div className="z-0 w-full mb-5 group">
                   <label htmlFor="gender" value="gender" className="text-sm text-stone-400">Giới tính</label>
                   <div className="flex gap-4 mt-3">
                     <Radio
                       id="gender-male"
                       name="gender"
-                      value={user.gender}
+                      value={true}
                       checked={user.gender === true}
                       onChange={handleInputChange}
                     />
@@ -196,18 +196,15 @@ export function ModalChinhSuaNguoiDung() {
                     <Radio
                       id="gender-female"
                       name="gender"
-                      value={user.gender}
+                      value={false}
                       checked={user.gender === false}
                       onChange={handleInputChange}
                     />
                     <Label htmlFor="gender-female">Nữ</Label>
                   </div>
-                  {errors.gender && (
-                    <p className="text-cyan-300 text-sm pt-2">{errors.gender}</p>
-                  )}
-                </div>
+                </div> */}
 
-                {/* <div>
+                <div>
                   <Label htmlFor="gender" value="Giới tính" />
                   <Select
                     id="gender"
@@ -218,7 +215,7 @@ export function ModalChinhSuaNguoiDung() {
                     <option value={true}>Nam</option>
                     <option value={false}>Nữ</option>
                   </Select>
-                </div> */}
+                </div>
 
 
               </div>

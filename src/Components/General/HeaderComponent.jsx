@@ -4,17 +4,17 @@ import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { DangKy } from "../../pages/DangKy/DangKy";
 import { DangNhap } from "../../pages/DangKy/DanhNhap";
+import LogoZahaSvg from "../../pages/TrangChu/Layout/LogoZahaSvg";
 import {
   setIsAdmin,
   setIsnotAdmin,
   setStateLogin,
   setStateLogout,
 } from "../../redux/Reducers/LoginStatus/LoginStatusSlice";
-import { Link as ScrollLink } from "react-scroll";
 import { fetchUserInfo } from "../../redux/Reducers/UserInfo/UserThunk";
-import LogoZahaSvg from "../../pages/TrangChu/Layout/LogoZahaSvg";
 
 export function HeaderComponent() {
   const { isLogin, isAdmin } = useSelector((state) => state.loginStatusSlice);
@@ -29,7 +29,6 @@ export function HeaderComponent() {
     if (infoUser) {
       dispatch(setStateLogin());
       dispatch(fetchUserInfo(infoUser.id));
-      console.log(1);
       if (infoUser.role === "ADMIN") {
         dispatch(setIsAdmin());
       }
@@ -44,7 +43,6 @@ export function HeaderComponent() {
     localStorage.removeItem("token");
   };
 
-  console.log("userInfo o header", userInfo);
   return (
     <Navbar
       fluid
@@ -77,11 +75,11 @@ export function HeaderComponent() {
 
             <hr />
 
-            <a href="/Thong-Tin-Nguoi-Dung" className="hover:no-underline">
+            <Link to="/Thong-Tin-Nguoi-Dung" className="hover:no-underline">
               <div className="text-black hover:text-white hover:bg-cyan-500 text-sm BanTay px-4 py-2 duration-500">
                 Thông tin cá nhân
               </div>
-            </a>
+            </Link>
 
             <hr />
 

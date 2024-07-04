@@ -35,8 +35,8 @@ export default function CardLocaltion() {
       locationListCard &&
       locationListCard.map((location) => (
         <div onClick={() => navigate(`Danh-Sach-Phong/${location.id}`)} key={location.id}
-        className="BanTay rounded-3xl bg-white hover:bg-cyan-50 border border-transparent hover:border-cyan-200 shadow-md hover:shadow-xl duration-500">
-          <div className='bg-center bg-cover rounded-3xl h-48 md:h-72' style={{ backgroundImage: `url(${location.hinhAnh})`}}>
+          className="BanTay rounded-3xl bg-white hover:bg-cyan-50 border border-transparent hover:border-cyan-200 shadow-md hover:shadow-xl duration-500">
+          <div className='bg-center bg-cover rounded-3xl h-48 md:h-72' style={{ backgroundImage: `url(${location.hinhAnh})` }}>
           </div>
 
           <div className='p-4 text-cyan-700 hover:text-cyan-500 duration-500'>
@@ -56,17 +56,17 @@ export default function CardLocaltion() {
         {renderLocationCardItem()}
       </div>
 
-      {/* <div className="flex justify-center mt-4">
+      <div className="flex justify-center mt-4 items-center">
         <Button disabled={currentPage === 1} onClick={handlePrevious}>
           1
         </Button>
-        <span>
+        <span className="mx-4">
           Trang {currentPage} trên {totalPages}
         </span>
         <Button disabled={currentPage === totalPages} onClick={handleNext}>
           1
         </Button>
-      </div> */}
+      </div>
     </div>
   );
 }

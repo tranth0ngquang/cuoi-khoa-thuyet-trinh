@@ -62,7 +62,7 @@ export default function useRoutesCustom() {
       children: [
         {
           index: true,
-          element: <QuanTriNguoiDung />,
+          element: <QuanTri />,
         },
         {
           path: "quan-ly-nguoi-dung",

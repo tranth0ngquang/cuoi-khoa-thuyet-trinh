@@ -146,10 +146,11 @@ const QuanTriNguoiDung = () => {
 
       <div className="flex justify-between mb-4">
         <TextInput
+          className="min-w-64"
           color="cyan"
           id="search"
           name="search"
-          placeholder="Tìm kiếm người dùng"
+          placeholder="Tìm kiếm người dùng theo tên..."
           value={searchTerm}
           onChange={handleSearchChange}
         />

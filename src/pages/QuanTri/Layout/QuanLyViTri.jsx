@@ -51,10 +51,12 @@ const QuanTriViTri = () => {
 
       <div className="flex justify-between mb-4">
         <TextInput
+          className="min-w-64"
+
           color="cyan"
           id="search"
           name="search"
-          placeholder="Tìm kiếm vị trí"
+          placeholder="Tìm kiếm vị trí theo id"
           value={searchTerm}
           onChange={handleSearchChange}
         />

@@ -7,9 +7,8 @@ import {
   fetchUserInfo,
   uploadAvatar,
 } from "../../redux/Reducers/UserInfo/UserThunk";
-import { ModalChinhSuaNguoiDung } from "./ModalChinhSuaNguoiDung";
-import { Avatar, Button } from "flowbite-react";
 import DanhSachPhongDaDat from "./DanhSachPhongDaDat";
+import { ModalChinhSuaNguoiDung } from "./ModalChinhSuaNguoiDung";
 
 const MySwal = withReactContent(Swal);
 
@@ -19,17 +18,29 @@ export default function ThongTinNguoiDung() {
   const userId = user.id;
   const { userInfo } = useSelector((state) => state.userInfoSlice);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [avatarPreview, setAvatarPreview] = useState(null);
 
   useEffect(() => {
     dispatch(fetchMangPhongDaDat(userId));
     dispatch(fetchUserInfo(userId));
   }, [dispatch, userId]);
 
-  const handleFileChange = (e) => {
-    setSelectedFile(e.target.files[0]);
+  // const handleFileChange = (e) => {
+  //   setSelectedFile(e.target.files[0]);
+  // };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setSelectedFile(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setAvatarPreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
-  console.log(localStorage.getItem("token"));
   const handleUploadAvatar = async () => {
     if (!selectedFile) {
       MySwal.fire({
@@ -43,6 +54,8 @@ export default function ThongTinNguoiDung() {
     formData.append("formFile", selectedFile);
     console.log(formData.get("formFile"));
     dispatch(uploadAvatar(formData));
+    document.getElementById('fileInput').value = null; // Reset input file
+    setAvatarPreview(null);
   };
 
   return (
@@ -77,8 +90,14 @@ export default function ThongTinNguoiDung() {
               <i class="fa-solid fa-circle-chevron-down ml-2"></i>
             </p>
 
-            <div className="flex flex-wrap gap-4 justify-center">
-              <input type="file" onChange={handleFileChange} className="w-60" />
+            {/* <div className="flex flex-wrap gap-4 justify-center"> */}
+            <div className="grid grid-cols-1 gap-4">
+              <div>
+                <input id="fileInput" type="file" onChange={handleFileChange} className="w-60" />
+                {avatarPreview && (
+                  <img src={avatarPreview} alt="Avatar Preview" className="w-60 h-60 object-cover rounded-full" />
+                )}
+              </div>
               <button onClick={handleUploadAvatar}
                 className="bg-cyan-500 text-white text-center hover:bg-cyan-700 duration-500 py-2 px-8 rounded-full mb-8">
                 Cập nhật avatar
@@ -86,7 +105,7 @@ export default function ThongTinNguoiDung() {
             </div>
           </div>
         </div>
-        
+
       </div>
       <hr className="mx-auto w-full max-w-screen-2xl p-4" />
 

@@ -59,9 +59,10 @@ const QuanLyPhong = () => {
 
       <div className="flex justify-between mb-4">
         <TextInput
+          className="min-w-64"
           color="cyan"
           id="search"
-          placeholder="Tìm kiếm phòng"
+          placeholder="Tìm kiếm phòng theo tên phòng"
           value={keyword}
           onChange={handleSearchChange}
         />

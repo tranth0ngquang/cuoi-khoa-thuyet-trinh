@@ -35,12 +35,8 @@
 //   }
 // };
 
-
 import { http } from "../../../api/config";
-import {
-  setBinhLuanList,
-  removeBinhLuanFromList,
-} from "./QuanLyBinhLuanSlice";
+import { setBinhLuanList, removeBinhLuanFromList } from "./QuanLyBinhLuanSlice";
 import Swal from "sweetalert2";
 
 export const fetchBinhLuanData = () => async (dispatch) => {
@@ -59,7 +55,9 @@ export const fetchBinhLuanData = () => async (dispatch) => {
 
 export const fetchBinhLuanTheoPhong = (maPhong) => async (dispatch) => {
   try {
-    const response = await http.get(`binh-luan/lay-binh-luan-theo-phong/${maPhong}`);
+    const response = await http.get(
+      `binh-luan/lay-binh-luan-theo-phong/${maPhong}`
+    );
     dispatch(setBinhLuanList(response.data.content));
   } catch (error) {
     console.log("Failed to fetch binh luan theo phong: ", error);
