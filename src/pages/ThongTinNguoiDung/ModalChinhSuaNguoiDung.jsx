@@ -122,7 +122,7 @@ export function ModalChinhSuaNguoiDung() {
           </div>
 
           <div className="text-center">
-            <div className="text-center font-bold text-2xl pb-4 pt-4 uppercase">Chỉnh sửa Thông tin Cá nhân</div>
+            <div className="text-center font-bold text-2xl pb-4 pt-4 uppercase mb-8">Chỉnh sửa Thông tin Cá nhân</div>
 
             <div className="text-center">
               <div className="text-left grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -161,26 +161,46 @@ export function ModalChinhSuaNguoiDung() {
                     <p className="text-red-500  text-sm pt-2">{errors.phone}</p>
                   )}
                 </div>
-                <div></div>
 
-                {/* sinh nhật - birthday */}
-                <div className="z-0 w-full mb-5 group">
-                  <label htmlFor="birthday" value="Birthday" className="text-sm text-stone-400">Birthday</label>
-                  <div className="text-stone-400 text-sm">
-                    <DatePicker
-                      id="birthday"
-                      name="birthday"
-                      type="birthday"
-                      selected={user.birthday}
-                      onChange={handleDateChange}
-                      className="pl-0 w-full bg-transparent text-sm text-white border-0 border-b-2 border-stone-500 focus:border-cyan-500 focus:outline-none focus:ring-0 peer"
-                    />
+                {/* Giới tính - Sinh nhật */}
+                <div className="flex justify-start gap-4">
+                  {/* Giới tính */}
+                  <div className="relative z-0 w-full mb-5 group">
+                    <label htmlFor="gender" value="Giới tính" className="absolute text-sm text-stone-400 z-10 transform -translate-y-6 scale-75 top-3">Giới tính</label>
+                    <select
+                      id="gender"
+                      name="gender"
+                      value={user.gender}
+                      onChange={handleInputChange}
+                      className=" text-white bg-transparent border-0 border-b-2 border-stone-500 focus:border-cyan-500 focus:ring-0 focus:ring-transparent"
+                    >
+                      <option value={true}>Nam</option>
+                      <option value={false}>Nữ</option>
+                    </select>
                   </div>
 
-                  {/* {formik.errors.birthday && formik.touched.birthday && (
+                  {/* sinh nhật - birthday */}
+                  <div className="relative z-0 w-full mb-5 group">
+                    <label htmlFor="birthday" value="Birthday" className="absolute text-sm text-stone-400 z-10 transform -translate-y-6 scale-75 top-3">Birthday</label>
+                    <div className="text-stone-400">
+                      <DatePicker
+                        id="birthday"
+                        name="birthday"
+                        type="birthday"
+                        selected={user.birthday}
+                        onChange={handleDateChange}
+                        className="pl-0 w-full bg-transparent text-white border-0 border-b-2 border-stone-500 focus:border-cyan-500 focus:outline-none focus:ring-0"
+                      />
+                    </div>
+
+                    {/* {formik.errors.birthday && formik.touched.birthday && (
                     <p className="text-cyan-300 text-sm pt-2">{formik.errors.birthday}</p>
                   )} */}
+                  </div>
                 </div>
+
+
+
 
                 {/* <div className="z-0 w-full mb-5 group">
                   <label htmlFor="gender" value="gender" className="text-sm text-stone-400">Giới tính</label>
@@ -204,25 +224,12 @@ export function ModalChinhSuaNguoiDung() {
                   </div>
                 </div> */}
 
-                <div>
-                  <Label htmlFor="gender" value="Giới tính" />
-                  <Select
-                    id="gender"
-                    name="gender"
-                    value={user.gender}
-                    onChange={handleInputChange}
-                  >
-                    <option value={true}>Nam</option>
-                    <option value={false}>Nữ</option>
-                  </Select>
-                </div>
-
 
               </div>
             </div>
 
             {/* nút Cập nhật */}
-            <button type="submit" onClick={handleSubmit} className="bg-cyan-500 text-center hover:bg-cyan-700 duration-500 py-2 px-8 rounded-full mb-8">
+            <button type="submit" onClick={handleSubmit} className="bg-cyan-500 text-center hover:bg-cyan-700 duration-500 py-2 px-8 rounded-full mt-4 mb-8">
               Cập nhật
             </button>
           </div>

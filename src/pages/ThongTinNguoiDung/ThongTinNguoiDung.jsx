@@ -76,7 +76,7 @@ export default function ThongTinNguoiDung() {
 
         <div className="flex flex-wrap items-start gap-12 justify-center mt-4">
 
-          <div className="border px-10 rounded-3xl bg-white shadow-lg hover:shadow-xl hover:bg-stone-100 hover:border-yellow-500 duration-500">
+          <div className="border px-10 rounded-3xl bg-white shadow-md hover:shadow-xl hover:bg-stone-100 hover:border-yellow-300 duration-500">
             <p className="pt-4 text-yellow-500 mb-2">
               Chỉnh sửa <span className="font-bold uppercase text-black">thông tin</span> tại đây
               <i class="fa-solid fa-circle-chevron-down ml-2"></i>
@@ -84,24 +84,27 @@ export default function ThongTinNguoiDung() {
             <ModalChinhSuaNguoiDung />
           </div>
 
-          <div className="border px-10 rounded-3xl bg-white shadow-lg hover:shadow-xl hover:bg-stone-100 hover:border-yellow-500 duration-500">
+          <div className="border px-10 rounded-3xl bg-white shadow-md hover:shadow-xl hover:bg-stone-100 hover:border-yellow-300 duration-500">
             <p className="pt-4 text-yellow-500 mb-2">
               Chỉnh sửa <span className="font-bold uppercase text-black">ảnh ava</span> tại đây
               <i class="fa-solid fa-circle-chevron-down ml-2"></i>
             </p>
 
             {/* <div className="flex flex-wrap gap-4 justify-center"> */}
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-4 mb-8">
               <div>
-                <input id="fileInput" type="file" onChange={handleFileChange} className="w-60 rounded-xl" />
+                <input id="fileInput" type="file" onChange={handleFileChange} className="w-60 rounded-full bg-cyan-500 text-white" />
                 {avatarPreview && (
-                  <img src={avatarPreview} alt="Avatar Preview" className="mt-4 w-60 h-60 object-cover rounded-full border-yellow-400 border-4" />
+                  <div>
+                    <img src={avatarPreview} alt="Avatar Preview" className="mt-4 w-40 h-40 mx-auto object-cover rounded-full border-yellow-400 border-4" />
+                    <button onClick={handleUploadAvatar}
+                      className="bg-yellow-500 text-white text-center hover:bg-yellow-700 duration-500 py-2 px-8 rounded-full mt-4">
+                      Cập nhật avatar
+                    </button>
+                  </div>
+
                 )}
               </div>
-              <button onClick={handleUploadAvatar}
-                className="bg-cyan-500 text-white text-center hover:bg-cyan-700 duration-500 py-2 px-8 rounded-full mb-8">
-                Cập nhật avatar
-              </button>
             </div>
           </div>
         </div>
