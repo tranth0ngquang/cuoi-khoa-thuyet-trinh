@@ -58,7 +58,7 @@ const QuanTriViTri = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Quản lý vị trí</h1>
+      <h1 className="text-2xl font-bold mb-4 text-cyan-700">Quản lý vị trí</h1>
 
       <div className="flex justify-between mb-4">
         <TextInput

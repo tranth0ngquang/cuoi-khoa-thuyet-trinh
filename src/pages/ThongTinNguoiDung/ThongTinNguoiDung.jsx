@@ -65,27 +65,27 @@ export default function ThongTinNguoiDung() {
         <div>
           <p className="font-bold text-2xl pb-2">Xin chào bạn</p>
 
-          <div className="bg-center bg-cover h-40 w-40 rounded-full text-center mx-auto"
+          <div className="bg-center bg-cover h-40 w-40 rounded-full text-center mx-auto border-yellow-400 border-4 "
             style={{ backgroundImage: `url("${userInfo.avatar}")` }}>
           </div>
 
-          <p className="text-cyan-500 font-bold text-2xl pt-2">{userInfo.name}</p>
+          <p className="text-yellow-500 font-bold text-2xl pt-2">{userInfo.name}</p>
           <p className="text-lg">Chúc bạn có những trải nghiệm tốt đẹp</p>
 
         </div>
 
-        <div className="flex flex-wrap gap-12 justify-center mt-4">
+        <div className="flex flex-wrap items-start gap-12 justify-center mt-4">
 
-          <div className="border px-10 rounded-3xl bg-white shadow-lg">
-            <p className="pt-4 text-cyan-500 mb-2">
+          <div className="border px-10 rounded-3xl bg-white shadow-lg hover:shadow-xl hover:bg-stone-100 hover:border-yellow-500 duration-500">
+            <p className="pt-4 text-yellow-500 mb-2">
               Chỉnh sửa <span className="font-bold uppercase text-black">thông tin</span> tại đây
               <i class="fa-solid fa-circle-chevron-down ml-2"></i>
             </p>
             <ModalChinhSuaNguoiDung />
           </div>
 
-          <div className="border px-10 rounded-3xl bg-white shadow-lg">
-            <p className="pt-4 text-cyan-500 mb-2">
+          <div className="border px-10 rounded-3xl bg-white shadow-lg hover:shadow-xl hover:bg-stone-100 hover:border-yellow-500 duration-500">
+            <p className="pt-4 text-yellow-500 mb-2">
               Chỉnh sửa <span className="font-bold uppercase text-black">ảnh ava</span> tại đây
               <i class="fa-solid fa-circle-chevron-down ml-2"></i>
             </p>
@@ -93,9 +93,9 @@ export default function ThongTinNguoiDung() {
             {/* <div className="flex flex-wrap gap-4 justify-center"> */}
             <div className="grid grid-cols-1 gap-4">
               <div>
-                <input id="fileInput" type="file" onChange={handleFileChange} className="w-60" />
+                <input id="fileInput" type="file" onChange={handleFileChange} className="w-60 rounded-xl" />
                 {avatarPreview && (
-                  <img src={avatarPreview} alt="Avatar Preview" className="w-60 h-60 object-cover rounded-full" />
+                  <img src={avatarPreview} alt="Avatar Preview" className="mt-4 w-60 h-60 object-cover rounded-full border-yellow-400 border-4" />
                 )}
               </div>
               <button onClick={handleUploadAvatar}

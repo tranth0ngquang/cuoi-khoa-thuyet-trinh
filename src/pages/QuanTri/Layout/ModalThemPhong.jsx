@@ -47,9 +47,9 @@ const ModalThemPhong = () => {
 
   return (
     <>
-      <Button color="cyan" onClick={() => setOpenModal(true)}>
+      <button className="bg-cyan-500 text-white hover:bg-cyan-800 rounded-lg py-2 px-6 duration-500" onClick={() => setOpenModal(true)}>
         Thêm Phòng
-      </Button>
+      </button>
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
         <Modal.Header>Thêm Phòng</Modal.Header>
         <Modal.Body>

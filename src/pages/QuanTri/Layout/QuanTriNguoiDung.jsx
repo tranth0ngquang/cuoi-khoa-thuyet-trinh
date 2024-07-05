@@ -150,7 +150,7 @@ const QuanTriNguoiDung = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Quản lý người dùng</h1>
+      <h1 className="text-2xl font-bold mb-4 text-cyan-700">Quản lý người dùng</h1>
 
       <div className="flex justify-between mb-4">
         <TextInput
@@ -162,9 +162,9 @@ const QuanTriNguoiDung = () => {
           value={searchTerm}
           onChange={handleSearchChange}
         />
-        <Button color="cyan" onClick={() => setOpenModal(true)}>
+        <button className="bg-cyan-500 text-white hover:bg-cyan-800 rounded-lg py-2 px-6 duration-500" onClick={() => setOpenModal(true)}>
           Thêm người dùng
-        </Button>
+        </button>
       </div>
 
       {/* Bang Thông tin nguoi dung */}

@@ -668,7 +668,7 @@ const QuanLyThongTinDatPhong = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Quản lý thông tin đặt phòng</h1>
+      <h1 className="text-2xl font-bold mb-4 text-cyan-700">Quản lý thông tin đặt phòng</h1>
 
       <div className="flex justify-between mb-4">
         <TextInput

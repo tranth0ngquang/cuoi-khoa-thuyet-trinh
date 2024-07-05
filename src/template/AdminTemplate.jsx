@@ -14,7 +14,7 @@ const AdminLayout = () => {
                 <NavLink
                   to="quan-ly-nguoi-dung"
                   className={({ isActive }) =>
-                    isActive ? "w-full px-4 py-2 text-cyan-500 hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
+                    isActive ? "w-full px-4 py-2 text-white hover:text-cyan-200 bg-cyan-500 hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
                   }
                 >
                   Quản lý người dùng
@@ -25,7 +25,7 @@ const AdminLayout = () => {
                 <NavLink
                   to="quan-ly-vi-tri"
                   className={({ isActive }) =>
-                    isActive ? "w-full px-4 py-2 text-cyan-500 hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
+                    isActive ? "w-full px-4 py-2 text-white hover:text-cyan-200 bg-cyan-500 hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
                   }
                 >
                   Quản lý vị trí
@@ -36,7 +36,7 @@ const AdminLayout = () => {
                 <NavLink
                   to="quan-ly-thong-tin-phong"
                   className={({ isActive }) =>
-                    isActive ? "w-full px-4 py-2 text-cyan-500 hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
+                    isActive ? "w-full px-4 py-2 text-white hover:text-cyan-200 bg-cyan-500 hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
                   }
                 >
                   Quản lý thông tin phòng
@@ -47,7 +47,7 @@ const AdminLayout = () => {
                 <NavLink
                   to="quan-ly-thong-tin-dat-phong"
                   className={({ isActive }) =>
-                    isActive ? "w-full px-4 py-2 text-cyan-500 hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
+                    isActive ? "w-full px-4 py-2 text-white hover:text-cyan-200 bg-cyan-500 hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
                   }
                 >
                   Quản lý thông tin đặt phòng
@@ -58,7 +58,7 @@ const AdminLayout = () => {
                 <NavLink
                   to="quan-ly-binh-luan"
                   className={({ isActive }) =>
-                    isActive ? "w-full px-4 py-2 text-cyan-500 hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
+                    isActive ? "w-full px-4 py-2 text-white hover:text-cyan-200 bg-cyan-500 hover:bg-cyan-700 duration-500 rounded-xl no-underline" : "w-full px-4 py-2 text-black hover:text-white bg-white hover:bg-cyan-700 duration-500 rounded-xl no-underline"
                   }
                 >
                   Quản lý bình luận

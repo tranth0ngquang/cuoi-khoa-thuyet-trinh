@@ -31,7 +31,7 @@ const DanhSachPhongDaDat = () => {
 
   return (
     <div className="mx-auto w-full max-w-screen-2xl p-4 pb-6 lg:pb-8">
-      <h1 className="text-2xl font-bold text-center mb-8">Danh Sách Phòng Đã Đặt</h1>
+      <h1 className="text-2xl font-bold text-center mb-8 text-yellow-500">Danh Sách Phòng Đã Đặt</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-8">
         {mangPhongDaDat.map((phong) => {
           const chiTiet = chiTietPhong[phong.maPhong];
