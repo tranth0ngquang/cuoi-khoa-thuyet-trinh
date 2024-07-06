@@ -285,8 +285,8 @@ export function DangKy({ show, setShow, toggleToDangNhap }) {
 
 
   return (
-    <Modal show={show} onClose={() => setShow(false)}>
-      <div className="relative bg-gradient-to-b from-cyan-700 to-cyan-950 text-white rounded-xl p-4">
+    <Modal show={show} onClose={() => setShow(false)} id="Modal_DangKy">
+      <div className="relative bg-gradient-to-b from-cyan-700 to-cyan-950 text-white rounded-3xl p-4">
 
         {/* nút close tab */}
         <div className="absolute top-7 right-7">
@@ -401,7 +401,7 @@ export function DangKy({ show, setShow, toggleToDangNhap }) {
                     checked={formik.values.gender === true}
                     onChange={() => formik.setFieldValue("gender", true)}
                   />
-                  <Label htmlFor="gender-male">Nam</Label>
+                  <Label htmlFor="gender-male" className="text-white dark:text-white">Nam</Label>
                   <Radio
                     id="gender-female"
                     name="gender"
@@ -409,7 +409,7 @@ export function DangKy({ show, setShow, toggleToDangNhap }) {
                     checked={formik.values.gender === false}
                     onChange={() => formik.setFieldValue("gender", false)}
                   />
-                  <Label htmlFor="gender-female">Nữ</Label>
+                  <Label htmlFor="gender-female" className="text-white dark:text-white">Nữ</Label>
                 </div>
                 {formik.errors.gender && formik.touched.gender && (
                   <p className="text-cyan-300 text-sm pt-2">{formik.errors.gender}</p>

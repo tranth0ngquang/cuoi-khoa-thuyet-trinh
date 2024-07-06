@@ -58,13 +58,13 @@ export default function CardLocaltion() {
 
       <div className="flex justify-center mt-4 items-center">
         <Button disabled={currentPage === 1} onClick={handlePrevious}>
-          1
+        <i class="fa-solid fa-angles-left"></i>
         </Button>
         <span className="mx-4">
           Trang {currentPage} trên {totalPages}
         </span>
         <Button disabled={currentPage === totalPages} onClick={handleNext}>
-          1
+        <i class="fa-solid fa-angles-right"></i>
         </Button>
       </div>
     </div>

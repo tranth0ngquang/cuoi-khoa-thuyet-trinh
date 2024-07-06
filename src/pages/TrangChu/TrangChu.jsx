@@ -17,7 +17,7 @@ export default function TrangChu() {
       <TimKiemKhoa />
       <CardLocaltion />
       <div className="mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
-        <div className='bg-center bg-cover w-full rounded-3xl h-96' style={{ backgroundImage: 'url(./img/FujiBanner.png)' }}>
+        <div className='bg-center bg-cover w-full rounded-3xl h-72 md:h-96' style={{ backgroundImage: 'url(./img/FujiBanner.png)' }}>
         </div>
 
       </div>

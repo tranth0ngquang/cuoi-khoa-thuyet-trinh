@@ -200,8 +200,8 @@ export function DangNhap({ show, setShow, toggleToDangKy }) {
   });
 
   return (
-    <Modal show={show} onClose={() => setShow(false)}>
-      <div className="relative bg-gradient-to-b from-cyan-700 to-cyan-950 text-white rounded-xl p-4">
+    <Modal show={show} onClose={() => setShow(false)} id="Modal_DangNhap">
+      <div className="relative bg-gradient-to-b from-cyan-700 to-cyan-950 text-white rounded-3xl p-4">
 
         {/* nút close tab */}
         <div className="absolute top-7 right-7">

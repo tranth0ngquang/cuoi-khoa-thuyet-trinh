@@ -111,8 +111,8 @@ export function ModalChinhSuaNguoiDung() {
         Chỉnh sửa Thông tin
       </button>
 
-      <Modal show={openModal} onClose={() => setOpenModal(false)}>
-        <div className="relative bg-gradient-to-b from-cyan-700 to-cyan-950 text-white rounded-xl p-4">
+      <Modal show={openModal} onClose={() => setOpenModal(false)} id="Modal_ThongTinNguoiDung">
+        <div className="relative bg-gradient-to-b from-cyan-700 to-cyan-950 text-white rounded-3xl p-4">
 
           {/* nút close tab */}
           <div className="absolute top-7 right-7">
@@ -172,10 +172,10 @@ export function ModalChinhSuaNguoiDung() {
                       name="gender"
                       value={user.gender}
                       onChange={handleInputChange}
-                      className=" text-white bg-transparent border-0 border-b-2 border-stone-500 focus:border-cyan-500 focus:ring-0 focus:ring-transparent"
+                      className=" text-white bg-transparent border-0 border-b-2 border-stone-500 focus:border-cyan-500 focus:ring-0 focus:ring-transparent TT_gender"
                     >
-                      <option value={true}>Nam</option>
-                      <option value={false}>Nữ</option>
+                      <option value={true} className="text-black">Nam</option>
+                      <option value={false} className="text-black">Nữ</option>
                     </select>
                   </div>
 

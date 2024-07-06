@@ -203,8 +203,19 @@ nav .nav_ava {
     cursor: pointer;
 }
 
+#Modal_DangNhap,
+#Modal_DangKy,
+#Modal_ThongTinNguoiDung {
+    background-color: rgba(0, 0, 0, 0.9);
+}
 
-
+#Modal_DangNhap > div,
+#Modal_DangKy > div,
+#Modal_ThongTinNguoiDung > div {
+    background-color: transparent;
+    border: none;
+    border-radius: 50px;
+}
 
 
 .nav_admin_sideBar > div {
