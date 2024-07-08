@@ -143,7 +143,7 @@ export default function CardItemPhong() {
     return filteredPhong.map((phong) => (
       <div className="">
         <div
-          className="BanTay rounded-3xl bg-white hover:bg-cyan-50 border border-transparent hover:border-cyan-200 shadow-md hover:shadow-xl duration-500"
+          className="BanTay rounded-3xl bg-white hover:bg-cyan-50 border border-transparent hover:border-cyan-200 shadow-md hover:shadow-xl duration-500 h-full"
           key={phong.id}
         // onClick={() => {
         //   dispatch(setIdSelectedRoom(phong.id));
@@ -225,7 +225,7 @@ export default function CardItemPhong() {
   return (
     <div>
       <UserSearch />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 mb-8 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-8 p-4">
         {renderCardItemPhong()}
       </div>
       <iframe

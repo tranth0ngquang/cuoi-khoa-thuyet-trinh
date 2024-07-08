@@ -14,10 +14,10 @@ export default function UserSearch() {
   // const {}
   return (
     <div className="p-4 py-6 lg:py-8">
-      <div className="flex justify-center items-center flex-wrap md:shadow-none shadow-lg rounded-3xl md:rounded-none">
+      <div className="lg:flex justify-center items-center text-center flex-wrap lg:shadow-none shadow-lg rounded-3xl lg:rounded-none border lg:border-none">
         <LocationSelect />
         <DateRangeSelect />
-        <div className="flex items-center md:rounded-r-full TimKiem">
+        <div className="flex justify-center items-center md:rounded-r-full TimKiem">
           <QuantityPeopleSelect />
           <button className="pr-2 md:pr-6"
             onClick={() => {

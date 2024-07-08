@@ -47,7 +47,7 @@ export function HeaderComponent() {
     <Navbar
       fluid
       className="w-full text-stone-500 px-4 sm:px-10 py-2.5 rounded-none rounded-b-3xl fixed z-50 shadow-lg bg-center bg-cover"
-      style={{ backgroundImage: "url(/img/header1.png)" }}
+      style={{ backgroundImage: "url(/img/header1.png)", zIndex:'1000' }}
     >
       <Link to="">
         <LogoZahaSvg />

@@ -15,17 +15,21 @@ nav a:hover,
 /* --------------------------- */
 
 .logoZaha path {
-    fill: rgb(6 182 212);
+    fill: white;
     transition: all 0.5s;
 }
 
 .logoZaha:hover path {
-    fill: white;
+    fill: rgb(2, 36, 49);
 }
 
-/* .footer_logoZaha .logoZaha:hover path {
+.footer_logoZaha .logoZaha path {
+    fill: rgb(6 182 212);
+    transition: all 0.5s;
+}
+.footer_logoZaha .logoZaha:hover path {
     fill: white;
-} */
+}
 
 /* --------------------------- */
 
@@ -153,6 +157,7 @@ nav .nav_ava {
  .Datepicker .relative {
     width: 18rem;
     z-index: 100;
+
 }
 .Datepicker .relative input::placeholder {
     color: black !important;
@@ -169,15 +174,28 @@ nav .nav_ava {
     @apply text-black font-bold;
 } 
 
-.TimKiem {
-    @apply py-2 rounded-none bg-transparent hover:bg-transparent hover:text-transparent hover:text-black md:bg-stone-200 md:hover:bg-cyan-500 md:hover:text-white duration-500;
+.Datepicker .relative .transition-all .rounded-lg{
+    box-shadow: 0 8px 5px rgb(0 0 0 / 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
 }
 
-@media screen and (max-width: 768px) {
+.Datepicker .relative .transition-all .rounded-lg .items-stretch .grid .bg-blue-100{
+    background-color: rgba(6, 181, 212, 0.2);
+}
+.Datepicker .relative .transition-all .rounded-lg .items-stretch .grid .bg-blue-500{
+    background-color: rgb(6, 181, 212);
+}
+
+.TimKiem {
+    @apply py-2 rounded-none bg-transparent hover:bg-transparent hover:text-transparent hover:text-black lg:bg-stone-200 lg:hover:bg-cyan-500 lg:hover:text-white duration-500;
+}
+
+/* @media screen and (max-width: 890px) {
     .Datepicker .relative {
         width: auto;
     }
-}
+} */
 
 
 

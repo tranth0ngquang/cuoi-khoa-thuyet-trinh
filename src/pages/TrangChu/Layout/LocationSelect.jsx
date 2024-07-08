@@ -52,7 +52,7 @@ export default function LocationSelect() {
         </div>
       }
     >
-      <button className="text-left px-2 md:px-8 md:rounded-l-full TimKiem">
+      <button className="text-left px-10 lg:px-8 lg:rounded-l-full TimKiem">
         <div>
           <p className="font-bold">Địa điểm:</p>
           <div className="text-sm text-stone-700">

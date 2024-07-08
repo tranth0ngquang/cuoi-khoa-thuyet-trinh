@@ -34,9 +34,10 @@ export const BackToTop = () => {
     isVisible && (
       <button
         onClick={scrollToTop}
-        style={{ position: 'fixed', bottom: '20px', right: '30px', zIndex: 1000 }}
+        className='fixed bottom-8 right-8 z-40 text-3xl text-white border border-white shadow-xl bg-cyan-500 rounded-full px-2.5 py-1.5 hover:bg-cyan-900 duration-500'
+        // style={{ position: 'fixed', bottom: '30px', right: '40px', zIndex: 1000, fontSize: '2.5rem', color: 'rgb(6 182 212)',  }}
       >
-        <i className="fa fa-arrow-alt-circle-up"></i>      </button>
+        <i class="fa-solid fa-angle-up"></i>     </button>
     )
   );
 };
