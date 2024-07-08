@@ -151,7 +151,7 @@ nav .nav_ava {
 
 /* TimKiemKhoa------------------------------ */
 .TimKiemKhoa {
-    @apply text-center text-stone-700 hover:text-cyan-500 border-b-2 border-transparent hover:border-cyan-300 duration-700 pb-2 mx-6 hover:mx-10;
+    @apply text-center text-stone-700 hover:text-cyan-500 border-b-2 border-transparent hover:border-cyan-300 duration-700 pb-2 mx-6 xl:hover:mx-10;
 }
 
  .Datepicker .relative {
