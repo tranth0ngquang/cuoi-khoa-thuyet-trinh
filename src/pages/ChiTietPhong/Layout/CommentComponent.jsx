@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { setIdSelectedRoom } from "../../../redux/Reducers/DanhSachPhong/danhSachPhongSlice";
 import {
   PostBinhLuan,
   fetchMangBinhLuan,
 } from "../../../redux/Reducers/ChiTietPhong/chiTietPhongThunk";
+import { setIdSelectedRoom } from "../../../redux/Reducers/DanhSachPhong/danhSachPhongSlice";
 
 export default function CommentComponent() {
+  const defaultAvatar = "https://i.pinimg.com/564x/b7/50/0f/b7500f90d894942c89f5b051a179e748.jpg"
+
   const { idSelectedRoomParams } = useParams();
   const dispatch = useDispatch();
   const { idSelectedRoom } = useSelector((state) => state.danhSachPhongSlice);
@@ -20,6 +22,8 @@ export default function CommentComponent() {
     dispatch(fetchMangBinhLuan(idSelectedRoomParams));
   }, [dispatch, idSelectedRoomParams]);
 
+
+  console.log("mangBinhLuan", mangBinhLuan);
   const renderComment = () => {
     return (
       mangBinhLuan &&
@@ -30,7 +34,7 @@ export default function CommentComponent() {
         >
           <img
             className="w-12 h-12 rounded-full"
-            src={binhLuanItem.avatar}
+            src={binhLuanItem.avatar ? binhLuanItem.avatar : defaultAvatar}
             alt={`${binhLuanItem.id}'s avatar`}
           />
           <div>
@@ -88,7 +92,7 @@ export default function CommentComponent() {
             <div className="flex items-center space-x-4 mb-4">
               <img
                 className="w-12 h-12 rounded-full"
-                src={userInfo?.avatar || ""}
+                src={userInfo.avatar ? userInfo.avatar : defaultAvatar}
                 alt="User avatar"
               />
               <div>
