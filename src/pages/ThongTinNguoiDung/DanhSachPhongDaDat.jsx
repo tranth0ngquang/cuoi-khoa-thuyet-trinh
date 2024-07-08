@@ -27,7 +27,6 @@ const DanhSachPhongDaDat = () => {
     }
   }, [dispatch, mangPhongDaDat]);
 
-  console.log(chiTietPhong);
 
   return (
     <div className="mx-auto w-full max-w-screen-2xl p-4 pb-6 lg:pb-8">

@@ -10,7 +10,6 @@
 // export const fetchUserDetail = (id) => async (dispatch) => {
 //   try {
 //     const response = await http.get(`users/${id}`);
-//     console.log("User detail: ", response.data.content);
 //     dispatch(setUserDetail(response.data.content));
 //   } catch (error) {
 //     console.log("Failed to fetch user detail: ", error);
@@ -86,7 +85,6 @@ import Swal from "sweetalert2";
 export const fetchUserDetail = (id) => async (dispatch) => {
   try {
     const response = await http.get(`users/${id}`);
-    console.log("User detail: ", response.data.content);
     dispatch(setUserDetail(response.data.content));
   } catch (error) {
     console.log("Failed to fetch user detail: ", error);

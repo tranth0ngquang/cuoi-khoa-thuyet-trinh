@@ -14,7 +14,6 @@
 //   );
 //   const dispatch = useDispatch();
 //   const navigate = useNavigate();
-//   console.log(danhSachPhongFull);
 //   useEffect(() => {
 //     dispatch(fetchDanhSachPhongFull());
 //   }, [dispatch]);
@@ -68,23 +67,15 @@
 
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
-  fetchDanhSachPhongFull,
-  fetchDanhSachPhongTheoViTri,
+  fetchDanhSachPhongFull
 } from "../../../redux/Reducers/DanhSachPhong/danhSachPhongThunk";
-import { Card } from "flowbite-react";
-import { useNavigate, useParams } from "react-router-dom";
-import { setSelectedLocation } from "../../../redux/Reducers/Home/homeSlice";
 import UserSearch from "../../TrangChu/Layout/UserSearch";
 
 import {
   Navigation,
-  Pagination,
-  Mousewheel,
-  Keyboard,
-  Ally,
-  Scrollbar,
-  Autoplay,
+  Pagination
 } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -100,15 +91,12 @@ export default function CardItemPhong() {
     (state) => state.danhSachPhongSlice
   );
   const { startDate } = useSelector((state) => state.homeSlice);
-  console.log("start day", startDate);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(danhSachPhongFull);
 
   const { soLuongKhachHienTai } = useSelector(
     (state) => state.chiTietPhongSlice
   );
-  console.log(soLuongKhachHienTai);
 
   const truncateString = (str, num) => {
     if (str.length <= num) {
@@ -131,11 +119,6 @@ export default function CardItemPhong() {
               <div
                 className="BanTay rounded-3xl bg-white hover:bg-cyan-50 border border-transparent hover:border-cyan-200 shadow-md hover:shadow-xl duration-500"
                 key={phong.id}
-              // onClick={() =>
-              //   navigate(
-              //     `/Danh-Sach-Phong/${phong.maViTri}/Chi-Tiet-Phong/${phong.id}`
-              //   )
-              // }
               >
                 <div className="relative">
                   <div className="absolute top-4 px-4 z-10 flex justify-between w-full">
@@ -180,7 +163,7 @@ export default function CardItemPhong() {
                   </Swiper>
                 </div>
 
-                <div className="p-4 text-cyan-700 hover:text-cyan-500 duration-500"
+                <div className=" p-4 text-cyan-700 hover:text-cyan-500 duration-500 sm:min-h-40 lg:min-h-8"
                   onClick={() =>
                     navigate(
                       `/Danh-Sach-Phong/${phong.maViTri}/Chi-Tiet-Phong/${phong.id}`
@@ -188,7 +171,7 @@ export default function CardItemPhong() {
                   }>
                   <div className="flex justify-between">
                     <p className="font-bold">
-                      {truncateString(phong.tenPhong, 16)}
+                      {truncateString(phong.tenPhong, 12)}
                     </p>
                     <p>
                       <i className="fa-solid fa-star pr-1 "></i>4.1

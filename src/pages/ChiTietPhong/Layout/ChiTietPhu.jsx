@@ -17,13 +17,13 @@ export default function ChiTietPhu() {
                                         </div>
 
                                         <div className='absolute bottom-0 right-0'>
-                                            <i class="fa-solid fa-check text-white text-2xl rounded-full bg-cyan-500 px-2.5 py-1"></i>
+                                            <i className="fa-solid fa-check text-white text-2xl rounded-full bg-cyan-500 px-2.5 py-1"></i>
                                         </div>
                                     </div>
                                 </div>
 
                                 <p className='font-semibold text-2xl pb-2'>Mathieu Lehanneur</p>
-                                <p><i class="fa-solid fa-medal text-cyan-500"></i>Chủ nhà loại 1</p>
+                                <p><i className="fa-solid fa-medal text-cyan-500"></i>Chủ nhà loại 1</p>
                             </div>
                             <div className='text-left text-sm'>
                                 <p className='font-semibold text-2xl text-cyan-500'>4321</p>
@@ -39,11 +39,11 @@ export default function ChiTietPhu() {
 
                         <div className='py-6'>
                             <div className='pb-2'>
-                                <i class="fa-solid fa-language pr-2"></i>
+                                <i className="fa-solid fa-language pr-2"></i>
                                 Nói Tiếng Anh và Tiếng Pháp
                             </div>
                             <div>
-                                <i class="fa-solid fa-earth-americas pr-2"></i>
+                                <i className="fa-solid fa-earth-americas pr-2"></i>
                                 Sống tại Paris, Pháp
                             </div>
                         </div>
@@ -63,7 +63,7 @@ export default function ChiTietPhu() {
                         <p className='pb-4'>Phản hồi trong vòng 1 giờ</p>
 
                         <button className='bg-cyan-500 hover:bg-cyan-700 text-white py-2 px-8 rounded-full duration-500 mb-4'>
-                            Nhắn tin ngay cho chủ nhà <i class="fa-solid fa-paper-plane pl-2"></i>
+                            Nhắn tin ngay cho chủ nhà <i className="fa-solid fa-paper-plane pl-2"></i>
                         </button>
 
                         {/* <hr className='pb-2' /> */}
@@ -88,21 +88,21 @@ export default function ChiTietPhu() {
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 pb-10 text-stone-700 text-center'>
                 <div>
-                    <i class="fa-solid fa-envelope text-4xl"></i>
+                    <i className="fa-solid fa-envelope text-4xl"></i>
                     <p className='font-semibold text-2xl pb-2'>Yêu cầu đặt phòng</p>
                     <p className='text-justify font-light'>
                         Chọn ngày mong muốn, thêm khách, sau đó trả lời câu hỏi về lý do bạn muốn đi.
                     </p>
                 </div>
                 <div>
-                    <i class="fa-solid fa-clipboard-check text-4xl"></i>
+                    <i className="fa-solid fa-clipboard-check text-4xl"></i>
                     <p className='font-semibold text-2xl pb-2'>Quy trình lựa chọn</p>
                     <p className='text-justify font-light'>
                         Trước tiên, chúng tôi sẽ chọn ngẫu nhiên một nhóm khách tiềm năng. Tiếp theo, chúng tôi sẽ xem xét câu trả lời của nhóm khách này để rút ra những quan điểm và cảm nhận riêng của họ về nơi ở biểu tượng. Sau đó, chúng tôi sẽ mời những khách được chọn đặt phòng.
                     </p>
                 </div>
                 <div>
-                    <i class="fa-solid fa-envelope-open-text text-4xl"></i>
+                    <i className="fa-solid fa-envelope-open-text text-4xl"></i>
                     <p className='font-semibold text-2xl pb-2'>Yêu cầu cần đáp ứng</p>
                     <p className='text-justify font-light'>
                         Để tham gia, bạn phải có tài khoản Airbnb đang hoạt động và đã tải ứng dụng; đồng thời, bạn phải là cư dân của một quốc gia hoặc khu vực hợp lệ. Việc gửi yêu cầu là hoàn toàn miễn phí.

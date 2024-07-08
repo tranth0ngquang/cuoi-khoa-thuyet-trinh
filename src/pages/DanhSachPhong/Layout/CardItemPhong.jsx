@@ -131,7 +131,6 @@ export default function CardItemPhong() {
     }
     return str.slice(0, num) + "...";
   };
-  console.log(danhSachPhong);
   const renderCardItemPhong = () => {
     const filteredPhong = danhSachPhong.filter(
       (phong) => phong.khach >= soLuongKhachHienTai

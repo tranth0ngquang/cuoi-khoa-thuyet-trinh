@@ -38,7 +38,6 @@ export default function CardDatPhong() {
     (state) => state.homeSlice
   );
 
-  console.log("startday-endday", startDate, endDate);
   const { idSelectedRoom } = useSelector((state) => state.danhSachPhongSlice);
   useEffect(() => {
     dispatch(setIdSelectedRoom(idSelectedRoomParams));
@@ -78,7 +77,6 @@ export default function CardDatPhong() {
       maNguoiDung: userID,
     };
 
-    console.log("paymentData", paymentData);
     dispatch(PostDatPhong(paymentData));
   };
 

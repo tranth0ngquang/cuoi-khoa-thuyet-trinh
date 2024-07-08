@@ -41,11 +41,11 @@ export default function CommentComponent() {
               </span>
             </div>
             <div className="star text-cyan-500">
-              <i class="fa-solid fa-star BanTay"></i>
-              <i class="fa-solid fa-star BanTay"></i>
-              <i class="fa-solid fa-star BanTay"></i>
-              <i class="fa-solid fa-star BanTay"></i>
-              <i class="fa-solid fa-star BanTay"></i>
+              <i className="fa-solid fa-star BanTay"></i>
+              <i className="fa-solid fa-star BanTay"></i>
+              <i className="fa-solid fa-star BanTay"></i>
+              <i className="fa-solid fa-star BanTay"></i>
+              <i className="fa-solid fa-star BanTay"></i>
             </div>
             <p className="mt-1 text-gray-700">{binhLuanItem.noiDung}</p>
           </div>
@@ -121,7 +121,7 @@ export default function CommentComponent() {
               type="submit"
               className="mt-2 px-4 py-2 bg-cyan-500 text-white rounded-full hover:bg-cyan-700 duration-500"
             >
-              Đánh giá <i class="fa-solid fa-paper-plane"></i>
+              Đánh giá <i className="fa-solid fa-paper-plane"></i>
             </button>
           </form>
         </div>

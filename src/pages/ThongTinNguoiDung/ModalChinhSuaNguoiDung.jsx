@@ -117,7 +117,7 @@ export function ModalChinhSuaNguoiDung() {
           {/* nút close tab */}
           <div className="absolute top-7 right-7">
             <button onClick={() => setOpenModal(false)}>
-              <i class="fa-solid fa-xmark  text-xl text-cyan-300 hover:text-white bg-cyan-900 hover:bg-cyan-950 px-2.5 py-1 rounded-full duration-500"></i>
+              <i className="fa-solid fa-xmark  text-xl text-cyan-300 hover:text-white bg-cyan-900 hover:bg-cyan-950 px-2.5 py-1 rounded-full duration-500"></i>
             </button>
           </div>
 

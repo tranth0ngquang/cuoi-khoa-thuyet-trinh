@@ -86,7 +86,7 @@ export default function TienNghiComponent() {
                 </div>
 
                 <div className='absolute bottom-0 right-0'>
-                  <i class="fa-solid fa-check text-white text-lg rounded-full bg-cyan-500 px-2 py-0.5"></i>
+                  <i className="fa-solid fa-check text-white text-lg rounded-full bg-cyan-500 px-2 py-0.5"></i>
                 </div>
               </div>
             </div>

@@ -23,7 +23,6 @@
 // //     setLocationListCard: (state, action) => {
 // //       state.locationListCard = action.payload.data;
 // //       state.totalPages = Math.ceil(action.payload.totalRow / 8);
-// //       console.log(state.totalPages);
 // //     },
 // //     setCurrentPage: (state, action) => {
 // //       state.currentPage = action.payload;

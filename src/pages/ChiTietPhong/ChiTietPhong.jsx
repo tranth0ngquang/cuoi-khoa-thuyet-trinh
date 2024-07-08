@@ -26,7 +26,6 @@ export default function ChiTietPhong() {
     };
   }, [dispatch, idSelectedRoomParams]);
 
-  console.log(chiTietPhong);
   return (
     <div>
       <img src="/img/BannerNav4.png" alt="" className="w-full pt-16 md:pt-0" />
@@ -34,11 +33,11 @@ export default function ChiTietPhong() {
         <h1 className="pb-4 text-cyan-700 font-bold text-xl md:text-3xl uppercase text-center">{chiTietPhong && chiTietPhong.tenPhong}</h1>
         <div className="flex justify-center pb-6">
           <div className="BanTay text-stone-500 hover:text-cyan-500 duration-500 pr-2">
-            <i class="fa-solid fa-arrow-up-from-bracket px-2"></i>
+            <i className="fa-solid fa-arrow-up-from-bracket px-2"></i>
             <span>Chia Sẻ</span>
           </div>
           <div className="BanTay text-stone-500 hover:text-cyan-500 duration-500 pl-2">
-            <i class="fa-solid fa-heart px-2"></i>
+            <i className="fa-solid fa-heart px-2"></i>
             <span>Yêu thích</span>
           </div>
 

@@ -19,7 +19,6 @@ export const fetchRoomDetail = (idSelectedRoom) => async (dispatch) => {
 export const PostDatPhong = (infoDatPhong) => async () => {
   try {
     const response = await http.post("dat-phong", infoDatPhong);
-    console.log("dat phong res", response.data);
     Swal.fire({
       icon: "success",
       title: "Đặt phòng thành công, chúc bạn có 1 kỳ nghỉ vui vẻ!",
@@ -59,8 +58,6 @@ export const PostBinhLuan = (infoBinhLuan) => async (dispatch) => {
         token: token,
       },
     });
-    console.log("binh luan res", response.data);
-    console.log("infoBinhLuan", infoBinhLuan.maPhong);
     dispatch(fetchMangBinhLuan(infoBinhLuan.maPhong));
     Swal.fire({
       icon: "success",

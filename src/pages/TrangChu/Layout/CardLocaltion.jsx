@@ -28,7 +28,6 @@ export default function CardLocaltion() {
     dispatch(fetchLocationListCard(currentPage));
   }, [dispatch, currentPage]);
 
-  console.log(locationListCard);
 
   const renderLocationCardItem = () => {
     return (
@@ -58,13 +57,13 @@ export default function CardLocaltion() {
 
       <div className="flex justify-center mt-4 items-center">
         <Button disabled={currentPage === 1} onClick={handlePrevious}>
-        <i class="fa-solid fa-angles-left"></i>
+        <i className="fa-solid fa-angles-left"></i>
         </Button>
         <span className="mx-4">
           Trang {currentPage} trên {totalPages}
         </span>
         <Button disabled={currentPage === totalPages} onClick={handleNext}>
-        <i class="fa-solid fa-angles-right"></i>
+        <i className="fa-solid fa-angles-right"></i>
         </Button>
       </div>
     </div>

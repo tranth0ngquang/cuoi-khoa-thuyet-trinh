@@ -1,21 +1,21 @@
+import Swal from "sweetalert2";
 import { http } from "../../../api/config";
 import {
+  addPhongToList,
+  removePhongFromList,
   setPhongList,
   setTotalPages,
-  addPhongToList,
   updatePhongInList,
-  removePhongFromList,
 } from "./QuanLyPhongSlice";
-import Swal from "sweetalert2";
 
 export const fetchPhongData = (pageIndex, keyword = "") => async (dispatch) => {
   try {
     const response = await http.get(
-      `phong-thue/phan-trang-tim-kiem?pageIndex=${pageIndex}&pageSize=5&keyword=${keyword}`
+      `phong-thue/phan-trang-tim-kiem?pageIndex=${pageIndex}&pageSize=10&keyword=${keyword}`
     );
     const dataPhongList = response.data.content.data;
     const totalRow = response.data.content.totalRow;
-    const pageSize = 5; // Số item trên mỗi trang
+    const pageSize = 10; // Số item trên mỗi trang
     const totalPages = Math.ceil(totalRow / pageSize);
     dispatch(setPhongList(dataPhongList));
     dispatch(setTotalPages(totalPages));

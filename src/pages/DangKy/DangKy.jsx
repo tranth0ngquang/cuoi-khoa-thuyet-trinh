@@ -291,7 +291,7 @@ export function DangKy({ show, setShow, toggleToDangNhap }) {
         {/* nút close tab */}
         <div className="absolute top-7 right-7">
           <button onClick={() => setShow(false)}>
-            <i class="fa-solid fa-xmark  text-xl text-cyan-300 hover:text-white bg-cyan-900 hover:bg-cyan-950 px-2.5 py-1 rounded-full duration-500"></i>
+            <i className="fa-solid fa-xmark  text-xl text-cyan-300 hover:text-white bg-cyan-900 hover:bg-cyan-950 px-2.5 py-1 rounded-full duration-500"></i>
           </button>
         </div>
         <div>
@@ -383,7 +383,6 @@ export function DangKy({ show, setShow, toggleToDangNhap }) {
                     className="pl-0 w-full bg-transparent text-sm text-white border-0 border-b-2 border-cyan-800 focus:border-cyan-500 focus:outline-none focus:ring-0 peer"
 
                   />
-                  {/* <i class="fa-solid fa-calendar text-xl"></i> */}
                 </div>
 
                 {formik.errors.birthday && formik.touched.birthday && (

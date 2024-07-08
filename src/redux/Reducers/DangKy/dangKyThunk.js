@@ -32,8 +32,6 @@ export const PostDangNhap = (dataForm) => async (dispatch) => {
     const dataFromAPI = response.data.content;
     dispatch(setUserID(dataFromAPI.user.id));
     dispatch(setUserInfo(dataFromAPI.user));
-    console.log(dataFromAPI.user.id);
-    console.log(response);
     dispatch(setDangNhapThanhCong(dataFromAPI));
     return response;
   } catch (error) {

@@ -1,25 +1,25 @@
+import { Button, Label, Modal, Pagination, Select, TextInput } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Label, Modal, Select, TextInput } from "flowbite-react";
-import { Table, Pagination } from "flowbite-react";
 import Swal from "sweetalert2";
 
+import { useNavigate } from "react-router-dom";
+import {
+  removeUserFromList,
+  setCurrentPage,
+  setUserList,
+  updateUserInList,
+} from "../../../redux/Reducers/QuanTri/QuanTriSlice";
 import {
   addUser,
-  fetchUserData,
-  updateUser,
-  searchUser,
   deleteUser,
+  fetchUserData,
+  searchUser,
+  updateUser,
 } from "../../../redux/Reducers/QuanTri/QuanTriThunk";
-import {
-  setCurrentPage,
-  updateUserInList,
-  setUserList,
-  removeUserFromList,
-} from "../../../redux/Reducers/QuanTri/QuanTriSlice";
-import { useNavigate } from "react-router-dom";
 
 const QuanTriNguoiDung = () => {
+  const defaultAvatar = "https://i.pinimg.com/564x/b7/50/0f/b7500f90d894942c89f5b051a179e748.jpg"
   const dispatch = useDispatch();
   const { userList, totalPages, currentPage } = useSelector(
     (state) => state.quanTriSlice
@@ -27,7 +27,6 @@ const QuanTriNguoiDung = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("user"));
-    console.log(userInfo);
     if (!userInfo || userInfo.role !== "ADMIN") {
       navigate("/");
     }
@@ -193,7 +192,7 @@ const QuanTriNguoiDung = () => {
               <td>{user.birthday}</td>
               <td key={`avatar-${user.id}`}>
                 <img
-                  src={user.avatar}
+                  src={user.avatar ? user.avatar : defaultAvatar}
                   alt={user.name}
                   className="w-10 h-10 rounded-full"
                 />

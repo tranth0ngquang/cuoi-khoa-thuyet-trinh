@@ -293,7 +293,6 @@ const QuanLyBinhLuan = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("user"));
-    console.log(userInfo);
     if (!userInfo || userInfo.role !== "ADMIN") {
       navigate("/");
     }

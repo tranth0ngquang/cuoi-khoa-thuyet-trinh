@@ -21,7 +21,6 @@ export const PutCapNhatUser = createAsyncThunk(
   async ({ userID, infoCapNhat }, thunkAPI) => {
     try {
       const response = await http.put(`users/${userID}`, infoCapNhat);
-      console.log("cap nhat", response.data);
       const updatedUser = response.data.content;
       thunkAPI.dispatch(setUserInfor(updatedUser));
       localStorage.setItem("user", JSON.stringify(updatedUser));

@@ -47,7 +47,7 @@ export function FooterComponent() {
 
               <div className="relative">
                 <div className="absolute inset-y-0 rtl:inset-x-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                  <i class="fa-solid fa-envelope text-cyan-500 text-lg"></i>
+                  <i className="fa-solid fa-envelope text-cyan-500 text-lg"></i>
                 </div>
 
                 <input type="email" id="default-email" placeholder="Địa chỉ email của bạn..." required

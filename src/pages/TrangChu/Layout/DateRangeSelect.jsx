@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Datepicker from "react-tailwindcss-datepicker";
 import {
-  setStartDate,
   setEndDate,
   setSoLuongNgayO,
+  setStartDate,
 } from "../../../redux/Reducers/Home/homeSlice";
 
 const DateRangeSelect = () => {
@@ -62,6 +62,8 @@ const DateRangeSelect = () => {
         displayFormat={"DD/MM/YYYY"}
         value={value}
         onChange={handleValueChange}
+        classNames="z-50"
+
       />
       <button className="w-full px-4">
         <p className="font-bold">Bạn đặt:</p>

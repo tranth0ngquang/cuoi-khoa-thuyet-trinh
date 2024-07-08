@@ -52,7 +52,6 @@ export default function ThongTinNguoiDung() {
     }
     const formData = new FormData();
     formData.append("formFile", selectedFile);
-    console.log(formData.get("formFile"));
     dispatch(uploadAvatar(formData));
     document.getElementById('fileInput').value = null; // Reset input file
     setAvatarPreview(null);
@@ -79,7 +78,7 @@ export default function ThongTinNguoiDung() {
           <div className="border px-10 rounded-3xl bg-white shadow-md hover:shadow-xl hover:bg-stone-100 hover:border-yellow-300 duration-500">
             <p className="pt-4 text-yellow-500 mb-2">
               Chỉnh sửa <span className="font-bold uppercase text-black">thông tin</span> tại đây
-              <i class="fa-solid fa-circle-chevron-down ml-2"></i>
+              <i className="fa-solid fa-circle-chevron-down ml-2"></i>
             </p>
             <ModalChinhSuaNguoiDung />
           </div>
@@ -87,7 +86,7 @@ export default function ThongTinNguoiDung() {
           <div className="border px-10 rounded-3xl bg-white shadow-md hover:shadow-xl hover:bg-stone-100 hover:border-yellow-300 duration-500">
             <p className="pt-4 text-yellow-500 mb-2">
               Chỉnh sửa <span className="font-bold uppercase text-black">ảnh ava</span> tại đây
-              <i class="fa-solid fa-circle-chevron-down ml-2"></i>
+              <i className="fa-solid fa-circle-chevron-down ml-2"></i>
             </p>
 
             {/* <div className="flex flex-wrap gap-4 justify-center"> */}
