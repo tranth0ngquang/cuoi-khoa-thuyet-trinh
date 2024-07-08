@@ -1,12 +1,12 @@
 // src/Components/General/BackToTop.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   // Show button when page is scrolled upto given distance
   const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
+    if (window.scrollY > 300) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
