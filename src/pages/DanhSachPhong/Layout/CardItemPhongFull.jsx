@@ -117,7 +117,7 @@ export default function CardItemPhong() {
           return (
             <div className="">
               <div
-                className="BanTay rounded-3xl bg-white hover:bg-cyan-50 border border-transparent hover:border-cyan-200 shadow-md hover:shadow-xl duration-500 h-full"
+                className="BanTay rounded-3xl bg-white hover:bg-cyan-50 border border-transparent hover:border-cyan-200 shadow-md hover:shadow-xl duration-500"
                 key={phong.id}
               >
                 <div className="relative">
